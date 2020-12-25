@@ -1,0 +1,642 @@
+test/25October_2010_Monday_tagesschau-17|SCHNEE NORD REGEN KOENNEN STERN KOENNEN SEHEN
+test/25October_2010_Monday_tagesschau-24|NORD REGEN REGION SONNE WOLKE WECHSELHAFT DANN FREITAG
+test/15December_2010_Wednesday_tagesschau-37|AB MORGEN SCHNEIEN
+test/10March_2011_Thursday_heute-58|WOCHENENDE SONNE SAMSTAG GERADE BIS SIEBZEHN GRAD
+test/14August_2009_Friday_tagesschau-62|DEUTSCH LAND MORGEN DRUCK
+test/14August_2009_Friday_tagesschau-73|SONNTAG NORD SONNE WOLKE GEWITTER DABEI
+test/14August_2009_Friday_tagesschau-75|GEWITTER STARK
+test/26January_2010_Tuesday_heute-105|IM-VERLAUF BLEIBEN WINTER SCHNEE
+test/26January_2010_Tuesday_heute-106|ABER MEHR KALT
+test/01November_2010_Monday_tagesschau-133|MORGEN IX NEBEL SONNE
+test/01November_2010_Monday_tagesschau-136|IX NEBEL HOCH NEBEL
+test/01November_2010_Monday_tagesschau-137|MORGEN
+test/08May_2010_Saturday_tagesschau-175|GEWITTER
+test/08May_2010_Saturday_tagesschau-176|FEUCHT TROCKEN
+test/24November_2011_Thursday_heute-224|WIE HEUTE SECHS ELF
+test/21August_2011_Sunday_tagesschau-263|NACHT ANFANG ENORM REGEN SCHAUER GEWITTER
+test/22November_2010_Monday_heute-283|BIS NACHT DANN
+test/14October_2010_Thursday_tagesschau-287|JETZT WETTER VORAUS MORGEN FREITAG
+test/14October_2010_Thursday_tagesschau-290|MEHR WOLKE MEISTENS
+test/14October_2010_Thursday_tagesschau-291|HEUTE NACHT BISSCHEN KLAR BISSCHEN NEBEL ABER
+test/14October_2010_Thursday_tagesschau-294|NORDWEST HAUPTSAECHLICH MOEGLICH BISSCHEN
+test/06April_2010_Tuesday_tagesschau-306|MORGEN HAUPTSAECHLICH SONNE
+test/12May_2010_Wednesday_tagesschau-323|DIENSTAG SAMSTAG NORD DANN WIND STARK SONST TEILWEISE SONNE DABEI
+test/12April_2010_Monday_tagesschau-365|DONNERSTAG SUEDOST WEITER WECHSELHAFT WEST MEHR FREUNDLICH
+test/12July_2010_Monday_tagesschau-373|WEST
+test/12July_2010_Monday_tagesschau-374|MORGEN WOLKE TEILWEISE REGEN GEWITTER
+test/17February_2011_Thursday_heute-387|GRAD KALT NORD BIS
+test/17April_2010_Saturday_tagesschau-399|AUCH LUFT MEHR
+test/17April_2010_Saturday_tagesschau-406|DIENSTAG HAUPTSAECHLICH ABER MOEGLICH REGEN ODER GEWITTER
+test/01October_2009_Thursday_tagesschau-420|SONNTAG NORD REGEN NORD STURM
+test/01October_2009_Thursday_tagesschau-421|SUED
+test/04May_2010_Tuesday_heute-460|DONNERSTAG TEMPERATUR SECHS BIS ZWEI
+test/30January_2013_Wednesday_tagesschau-476|AUCH SAMSTAG REGEN SCHNEE SCHNEIEN REGEN SPAETER WEST NORD MEHR FREUNDLICH
+test/07February_2010_Sunday_tagesschau-499|MINUS SIEBEN MOEGLICH
+test/20October_2011_Thursday_tagesschau-506|SUED
+test/20October_2011_Thursday_tagesschau-513|SECHS GRAD DREIZEHN GRAD
+test/14October_2009_Wednesday_tagesschau-516|JETZT MORGEN WETTER MORGEN
+test/14October_2009_Wednesday_tagesschau-526|HEUTE PLUS MINUS MITTE
+test/12October_2009_Monday_tagesschau-548|JETZT MORGEN WETTER WIE-AUSSEHEN DREIZEHN
+test/12October_2009_Monday_tagesschau-560|FREUNDLICH
+test/12October_2009_Monday_tagesschau-561|AUCH
+test/12October_2009_Monday_tagesschau-562|FREITAG VIEL WOLKE REGEN
+test/12October_2009_Monday_tagesschau-563|SCHNEE KOENNEN
+test/25February_2011_Friday_tagesschau-568|TAG OST VIEL SONNE WEST REGEN KUESTE
+test/09July_2010_Friday_tagesschau-591|GEWITTER NUR WEST GEWITTER
+test/06October_2010_Wednesday_tagesschau-638|MORGEN MITTAG STARK WIND
+test/14December_2010_Tuesday_heute-650|AUCH PLUS REGION FROST
+test/14December_2010_Tuesday_heute-651|BESONDERS KALT SUEDOST
+test/11July_2009_Saturday_tagesschau-655|MORGEN WETTER WIE-AUSSEHEN SONNTAG JUNI
+test/11July_2009_Saturday_tagesschau-664|HEUTE NACHT BIS SIEBEN GRAD
+test/11July_2009_Saturday_tagesschau-665|MORGEN KOENNEN SIEBZEHN FUENF ZWANZIG
+test/11July_2009_Saturday_tagesschau-667|DIENSTAG MITTWOCH SONNE WOLKE WECHSELHAFT SCHAUER REGION GEWITTER KOENNEN
+test/31January_2011_Monday_tagesschau-668|WETTER VORAUS MORGEN DIENSTAG
+test/04August_2011_Thursday_tagesschau-712|REGION FREUNDLICH SPAETER NORDWEST AUCH SONNE SONST
+test/04August_2011_Thursday_tagesschau-713|SCHAUER GEWITTER STARK
+test/26June_2010_Saturday_tagesschau-724|REGION DANN WEST GEWITTER KOENNEN
+test/26June_2010_Saturday_tagesschau-725|WIND SCHWACH
+test/19April_2010_Monday_heute-782|SCHOEN ABEND
+test/06October_2011_Thursday_tagesschau-823|WEST NORDWEST REGEN
+test/06October_2011_Thursday_tagesschau-825|WEHEN FRISCH STURM SCHAUER
+test/04December_2009_Friday_tagesschau-833|MORGEN SAMSTAG FUENFTE WETTER
+test/04December_2009_Friday_tagesschau-834|LUFT WIND DANN MORGEN
+test/04December_2009_Friday_tagesschau-835|WENN AUCH SCHNEE SCHNEIEN
+test/04December_2009_Friday_tagesschau-844|SONNTAG MEHR MILD VIEL WOLKE
+test/04December_2009_Friday_tagesschau-845|MONTAG DIENSTAG AUCH SONNE
+test/11July_2011_Monday_tagesschau-849|NACHT MEHR WOLKE KLAR STERN SEHEN
+test/28July_2010_Wednesday_tagesschau-864|MORGEN REGEN GEWITTER KOENNEN
+test/28July_2010_Wednesday_tagesschau-871|SAMSTAG FREUNDLICH TROCKEN MEHR WARM
+test/28July_2010_Wednesday_tagesschau-872|SONNTAG REGION REGEN
+test/23October_2010_Saturday_tagesschau-895|IX SCHWER STURM
+test/23October_2010_Saturday_tagesschau-896|NACHT ZWANZIG BIS ACHT
+test/31March_2010_Wednesday_tagesschau-999|MORGEN WETTER WIE-AUSSEHEN ERSTE APRIL DONNERSTAG
+test/31March_2010_Wednesday_tagesschau-1000|TIEF MORGEN WECHSELHAFT WETTER
+test/31March_2010_Wednesday_tagesschau-1008|FREITAG WOLKE SCHNEE KOENNEN SONNE LANG
+test/29October_2009_Thursday_tagesschau-1013|DANN SONNE
+test/29October_2009_Thursday_tagesschau-1024|MONTAG WECHSELHAFT MEHR KUEHL
+test/27April_2010_Tuesday_heute-1028|SCHON MORGEN GRAD AUCH WARM FUENF ZWANZIG
+test/27April_2010_Tuesday_heute-1038|MEHR SCHOEN SPAETER MEHR WARM
+test/27April_2010_Tuesday_heute-1039|MITTAG
+test/06September_2010_Monday_tagesschau-1147|SCHWACH NORD WIND WEHEN STURM
+test/06September_2010_Monday_tagesschau-1153|DONNERSTAG WENN
+test/06November_2010_Saturday_tagesschau-1162|SCHWACH WEHEN NORD
+test/04June_2010_Friday_tagesschau-1173|WIND SCHWACH
+test/04June_2010_Friday_tagesschau-1176|MONTAG MEHR SONNE SCHAUER GEWITTER
+test/09August_2009_Sunday_tagesschau-1186|WIND SCHWACH REGION ZEIGEN-BILDSCHIRM
+test/05July_2010_Monday_tagesschau-1202|MEHR TROCKEN
+test/05July_2010_Monday_tagesschau-1205|MORGEN ACHTZEHN ZWANZIG
+test/05October_2010_Tuesday_heute-1218|WIND
+test/27May_2010_Thursday_heute-1236|NAECHSTE SONNTAG WIEDER
+test/02August_2010_Monday_heute-1243|DANN REGEN MILD
+test/20June_2011_Monday_tagesschau-1249|JETZT WETTER VORAUS INFORMIEREN MORGEN DIENSTAG EINS ZWANZIG NUR
+test/20June_2011_Monday_tagesschau-1256|MITTE FLUSS NUR
+test/20June_2011_Monday_tagesschau-1257|HEUTE HOCH FLUSS WARM ZWANZIG GRAD ACHTZEHN MITTWOCH
+test/12July_2011_Tuesday_heute-1283|DANN STURM KOENNEN
+test/02October_2010_Saturday_tagesschau-1300|KOMMEN
+test/18April_2011_Monday_tagesschau-1314|MORGEN WETTER WIE-AUSSEHEN DIENSTAG NEUNZEHN APRIL
+test/22August_2010_Sunday_tagesschau-1344|MORGEN SCHAUER BESONDERS SUEDOST DANN GEWITTER REGEN MOEGLICH
+test/26October_2009_Monday_tagesschau-1394|HEUTE NACHT HAUPTSAECHLICH REGEN
+test/26October_2009_Monday_tagesschau-1402|NORDOST MEHR REGEN
+test/26October_2009_Monday_tagesschau-1403|FREITAG WENN VERSCHWINDEN SONNE
+test/13August_2011_Saturday_tagesschau-1412|NORD NORDWEST MORGEN ZWANZIG IX DREI ZWANZIG GRAD FUENF ZWANZIG BIS NEUN ZWANZIG GRAD
+test/17February_2010_Wednesday_heute-1478|MILD
+test/17February_2010_Wednesday_heute-1482|DANN
+test/08February_2010_Monday_heute-1497|
+test/08February_2010_Monday_heute-1498|ABER
+test/08February_2010_Monday_heute-1501|MILD BIS VIER BIS
+test/07April_2010_Wednesday_heute-1619|GUT ABEND LIEB ZUSCHAUER
+test/07April_2010_Wednesday_heute-1626|MORGEN SUEDOST
+test/07April_2010_Wednesday_heute-1630|KUEHL BESONDERS SAMSTAG
+test/18July_2009_Saturday_tagesschau-1634|TIEF DRUCK DESHALB DEUTSCH REGEN
+test/18July_2009_Saturday_tagesschau-1640|NACHT SECHS
+test/13October_2009_Tuesday_tagesschau-1657|AEHNLICH WETTER DONNERSTAG
+test/13October_2009_Tuesday_tagesschau-1658|FREITAG DANN SUEDWEST
+test/13October_2009_Tuesday_tagesschau-1659|
+test/03July_2011_Sunday_tagesschau-1665|REGION MEHR FREUNDLICH KOMMEN MINUS
+test/03July_2011_Sunday_tagesschau-1672|DIENSTAG WEST FREUNDLICH SCHAUER GEWITTER
+test/12January_2011_Wednesday_tagesschau-1727|GEFAHR WARNUNG WIND
+test/09March_2011_Wednesday_heute-1741|SUEDOST REGION
+test/25February_2010_Thursday_tagesschau-1761|NUR MORGEN BIS
+test/12August_2009_Wednesday_tagesschau-1806|FREITAG SONNE SUED ANFANG REGEN
+test/05November_2010_Friday_tagesschau-1872|AUCH BISSCHEN SONNE MORGEN REGEN TAG IM-VERLAUF
+test/31May_2011_Tuesday_heute-1904|DANN SCHAUER NORDWEST WARM
+test/28December_2011_Wednesday_tagesschau-1912|LUFT SCHNEE
+test/08December_2009_Tuesday_tagesschau-1938|REGION MEHR
+test/07September_2010_Tuesday_tagesschau-1945|JETZT WETTER WIE-AUSSEHEN MORGEN MITTWOCH ACHT
+test/07September_2010_Tuesday_tagesschau-1954|FRISCH STARK
+test/11May_2010_Tuesday_tagesschau-1969|DONNERSTAG BESONDERS REGEN
+test/03July_2009_Friday_tagesschau-2014|SONNTAG HAUPTSAECHLICH OST SCHAUER GEWITTER FREUNDLICH
+test/03July_2009_Friday_tagesschau-2015|DANN WECHSELHAFT
+test/30April_2010_Friday_tagesschau-2025|MORGEN KUESTE ZEHN GRAD ZWANZIG GRAD
+test/25October_2010_Monday_heute-2049|NEU WOLKE MITTAG SCHNEE WIND
+test/03February_2010_Wednesday_tagesschau-2054|WEITER DRUCK BISSCHEN SCHNEE SCHNEIEN
+test/03February_2010_Wednesday_tagesschau-2056|HEUTE NACHT AUCH SCHNEE SCHNEIEN
+test/03February_2010_Wednesday_tagesschau-2061|SCHNEE SCHNEIEN
+test/03February_2010_Wednesday_tagesschau-2062|WIND SCHWACH WEHEN
+test/03February_2010_Wednesday_tagesschau-2064|MORGEN SIEBEN FLUSS WENN IX MINUS
+test/14December_2009_Monday_tagesschau-2088|KALT FREITAG MINUS
+test/14December_2009_Monday_tagesschau-2092|NORD WIND REGEN SONST MAESSIG
+test/14December_2009_Monday_tagesschau-2093|WENN BERG STURM
+test/18November_2011_Friday_tagesschau-2142|WIE-IMMER
+test/17April_2011_Sunday_tagesschau-2152|WETTER WIE-AUSSEHEN MORGEN MONTAG APRIL
+test/06August_2010_Friday_tagesschau-2178|BISSCHEN WOLKE BISSCHEN SCHAUER
+test/24August_2010_Tuesday_tagesschau-2196|HEUTE NACHT KUESTE REGEN AUCH IX
+test/30December_2010_Thursday_tagesschau-2232|NORD SCHNEE
+test/05January_2011_Wednesday_tagesschau-2255|ABER BLEIBEN TROCKEN
+test/30October_2009_Friday_tagesschau-2267|JETZT WETTER MORGEN SAMSTAG EINS
+test/30October_2009_Friday_tagesschau-2273|SONNE
+test/30October_2009_Friday_tagesschau-2274|WEST IM-VERLAUF MORGEN WOLKE BLEIBEN TROCKEN REGEN
+test/28March_2011_Monday_tagesschau-2285|SUED WOLKE BISSCHEN KOENNEN REGION
+test/28March_2011_Monday_tagesschau-2286|NORDWEST
+test/28March_2011_Monday_tagesschau-2287|MORGEN MEISTENS SONNE
+test/13April_2010_Tuesday_tagesschau-2308|REGION HOCH FREUNDLICH
+test/13April_2010_Tuesday_tagesschau-2314|NORD GRAD FLUSS
+test/13April_2010_Tuesday_tagesschau-2318|SAMSTAG VIEL BESONDERS ALPEN WOLKE KOENNEN
+test/26September_2009_Saturday_tagesschau-2336|SUED BISSCHEN SCHAUER MOEGLICH
+test/26September_2009_Saturday_tagesschau-2339|WENN NEBEL
+test/26September_2009_Saturday_tagesschau-2340|SUED REGEN BISSCHEN
+test/26September_2009_Saturday_tagesschau-2341|NORD SCHWACH MAESSIG WEHEN SONST
+test/03February_2010_Wednesday_heute-2354|AUCH DABEI SCHNEE
+test/03February_2010_Wednesday_heute-2355|NORD TROCKEN KOENNEN
+test/03February_2010_Wednesday_heute-2356|MORGEN IX SCHNEIEN SCHNEE
+test/03February_2010_Wednesday_heute-2360|SAMSTAG
+test/03February_2010_Wednesday_heute-2361|SONNTAG
+test/03February_2010_Wednesday_heute-2362|SCHOEN
+test/14July_2009_Tuesday_tagesschau-2425|TEIL AUCH KLAR
+test/14July_2009_Tuesday_tagesschau-2427|SUED SUEDOST DANN GEWITTER
+test/14July_2009_Tuesday_tagesschau-2430|HEUTE NACHT DREIZEHN ACHTZEHN
+test/14July_2009_Tuesday_tagesschau-2433|BESONDERS WARM GEWITTER
+test/10February_2010_Wednesday_tagesschau-2514|MOEGLICH SCHNEE REGEN AUCH
+test/10February_2010_Wednesday_tagesschau-2515|WOCHENENDE
+test/10February_2010_Wednesday_tagesschau-2523|SAMSTAG TEIL SCHNEE WENIG NORD MOEGLICH HIMMEL
+test/25November_2010_Thursday_tagesschau-2527|HEUTE NACHT BESONDERS IX SONST SCHNEE
+test/25November_2010_Thursday_tagesschau-2528|VORSICHT STRASSE
+test/12January_2010_Tuesday_heute-2543|HEUTE NACHT HAUPTSAECHLICH MITTE MINUS
+test/12January_2010_Tuesday_heute-2544|MORGEN SUED REGION MOEGLICH SCHNEE
+test/22September_2010_Wednesday_heute-2624|FREITAG TEMPERATUR OST
+test/22September_2010_Wednesday_heute-2625|KUEHL
+test/22September_2010_Wednesday_heute-2626|SCHOEN ABEND TSCHUESS
+test/03June_2010_Thursday_tagesschau-2628|KOMMEN
+test/03June_2010_Thursday_tagesschau-2629|AUCH SAMSTAG SONNTAG VIEL SONNE TEMPERATUR
+test/03June_2010_Thursday_tagesschau-2636|TAG SECHSZEHN SIEBEN ZWANZIG
+test/06July_2010_Tuesday_tagesschau-2657|WIND SCHWACH UNTERSCHIED
+test/06July_2010_Tuesday_tagesschau-2658|AUCH FRISCH IX WEHEN
+test/05January_2010_Tuesday_tagesschau-2667|MORGEN FREITAG HAUPTSAECHLICH
+test/05January_2010_Tuesday_tagesschau-2668|SUEDWEST HEUTE NACHT KOENNEN SCHNEE
+test/19January_2011_Wednesday_heute-2690|SCHOEN ABEND poss-EUCH MACHEN
+test/01October_2010_Friday_tagesschau-2700|NACHT ZWOELF EINS
+test/01October_2010_Friday_tagesschau-2701|
+test/31January_2013_Thursday_tagesschau-2708|HEUTE NACHT BESONDERS REGION REGEN
+test/31January_2013_Thursday_tagesschau-2713|NACHMITTAG REGION
+test/03August_2010_Tuesday_tagesschau-2780|ZWANZIG MEHR
+test/26January_2010_Tuesday_tagesschau-2784|JETZT WETTER MORGEN MITTWOCH ZWANZIG
+test/08February_2010_Monday_tagesschau-2797|MORGEN ZUERST TROCKEN
+test/04March_2011_Friday_tagesschau-2838|WENN NEBEL VERSCHWINDEN DANN MORGEN SONNE WOLKE
+test/02October_2012_Tuesday_tagesschau-2847|DEUTSCH HOCH DRUCK FREUNDLICH
+test/02July_2009_Thursday_tagesschau-2860|NORDOST DEUTSCH MORGEN DESHALB SONNE
+test/22July_2009_Wednesday_tagesschau-2873|NACHT SCHAUER GEWITTER REGEN MOEGLICH
+test/28January_2010_Thursday_heute-2882|GUT ABEND LIEB DU ZUSCHAUER
+test/28January_2010_Thursday_heute-2883|FUENF SCHNEIEN
+test/24October_2010_Sunday_tagesschau-2908|SUED BISSCHEN SCHAUER BIS SCHAUER TEIL WOLKE SONNE
+test/24October_2010_Sunday_tagesschau-2909|MITTWOCH REGEN
+test/24October_2010_Sunday_tagesschau-2910|NEBEL SONNE
+test/05February_2010_Friday_tagesschau-2916|WEST UND NORDOST TROCKEN
+test/05February_2010_Friday_tagesschau-2924|STARK WOLKE KOENNEN NEBEL TEIL DANN SONNE DABEI
+test/20September_2010_Monday_heute-2929|MEHR FREUNDLICH
+test/20September_2010_Monday_heute-2930|HEUTE
+test/29September_2012_Saturday_tagesschau-2963|SCHWACH MAESSIG WIND STARK
+test/25January_2011_Tuesday_tagesschau-2993|FREUNDLICH SAMSTAG NUR BISSCHEN SCHNEE
+test/24August_2010_Tuesday_heute-3006|LIEB GUT ABEND
+test/24August_2010_Tuesday_heute-3007|WETTER KOENNEN
+test/24August_2010_Tuesday_heute-3010|REGEN DONNERSTAG
+test/07October_2012_Sunday_tagesschau-3032|NACHT
+test/07October_2012_Sunday_tagesschau-3033|MORGEN MAESSIG WIND NORD
+test/31January_2011_Monday_heute-3053|NACHT
+test/20April_2011_Wednesday_tagesschau-3086|AUCH UND VIEL SONNE SPAETER BISSCHEN WOLKE
+test/16November_2009_Monday_tagesschau-3105|MITTWOCH DONNERSTAG NORD TEIL REGEN
+test/16November_2009_Monday_tagesschau-3106|MEHR FREUNDLICH
+test/21April_2010_Wednesday_heute-3108|ABEND
+test/21April_2010_Wednesday_heute-3109|JETZT NACHT FROST
+test/24May_2010_Monday_tagesschau-3139|JETZT WETTER WIE-AUSSEHEN MORGEN DIENSTAG FUENF ZWANZIG
+test/26August_2009_Wednesday_tagesschau-3213|MORGEN WETTER WIE-AUSSEHEN DONNERSTAG SIEBEN ZWANZIG
+test/26August_2009_Wednesday_tagesschau-3226|SAMSTAG KUEHL NORD STARK WIND
+test/26August_2009_Wednesday_tagesschau-3227|AB SONNTAG DANN TEMPERATUR SONNE
+test/14August_2011_Sunday_tagesschau-3230|GEWITTER UNWETTER WIND KOENNEN
+test/14August_2011_Sunday_tagesschau-3232|ANFANG REGEN
+test/22February_2010_Monday_tagesschau-3246|NACHT TROCKEN HEUTE DANN REGEN
+test/22February_2010_Monday_tagesschau-3247|NORD SCHNEE KOENNEN
+test/22September_2010_Wednesday_tagesschau-3258|STERN SEHEN WOLKE
+test/27August_2009_Thursday_tagesschau-3267|MORGEN WETTER FREITAG ACHT ZWANZIG KOENNEN
+test/27August_2009_Thursday_tagesschau-3268|
+test/27August_2009_Thursday_tagesschau-3269|KOMMEN
+test/15March_2011_Tuesday_tagesschau-3322|IX HOCH
+test/15March_2011_Tuesday_tagesschau-3325|SONST KLAR
+test/15March_2011_Tuesday_tagesschau-3326|ABER NACHT MEHR WOLKE
+test/05May_2010_Wednesday_tagesschau-3348|MITTE MEER TIEF KOMMEN MORGEN REGION WOLKE
+test/05May_2010_Wednesday_tagesschau-3352|NORD MORGEN UND TROCKEN DANN REGION VIEL
+test/05May_2010_Wednesday_tagesschau-3353|BAYERN SCHAUER GEWITTER KOENNEN SEHEN
+test/05May_2010_Wednesday_tagesschau-3359|REGEN
+test/05May_2010_Wednesday_tagesschau-3360|WARM WETTER WECHSELHAFT GEWITTER SONNE DABEI
+test/18May_2010_Tuesday_heute-3366|MORGEN REGEN WEST SPEZIELL
+test/01April_2011_Friday_tagesschau-3374|WETTER WIE-AUSSEHEN MORGEN SAMSTAG ZWEITE APRIL
+test/01April_2011_Friday_tagesschau-3377|NORD HEUTE NACHT KOENNEN SCHNEE REGEN
+test/01April_2011_Friday_tagesschau-3387|MONTAG REGION MEHR
+test/01April_2011_Friday_tagesschau-3388|AB ABER DIENSTAG FREUNDLICH
+test/17September_2010_Friday_tagesschau-3412|REGEN GUT
+test/17September_2010_Friday_tagesschau-3413|GUT
+test/23September_2010_Thursday_tagesschau-3448|SAMSTAG MEISTENS WOLKE SONNE KOENNEN
+test/01December_2011_Thursday_tagesschau-3473|WIND MAESSIG FRISCH STARK STURM BERG STURM SCHWACH
+test/25September_2010_Saturday_tagesschau-3489|MONTAG MEISTENS REGEN DAZU BISSCHEN
+test/11December_2009_Friday_tagesschau-3504|JETZT WETTER WIE-AUSSEHEN SAMSTAG ZWOELF
+test/11November_2010_Thursday_tagesschau-3564|TEILWEISE
+test/11November_2010_Thursday_tagesschau-3565|VERSCHWINDEN NORD KOENNEN BISSCHEN GEWITTER
+test/28January_2013_Monday_tagesschau-3624|WIND HEUTE NORD STURM KOENNEN STURM BERG
+test/02December_2010_Thursday_tagesschau-3631|OST ZWEI
+test/22April_2010_Thursday_tagesschau-3736|HAUPTSAECHLICH SONNE MEHR WARM
+test/22April_2010_Thursday_tagesschau-3738|AUCH MONTAG KOENNEN GEWITTER MEHR WOLKE BLEIBEN WARM SONNE
+test/05May_2011_Thursday_heute-3747|UND WIND
+test/19November_2009_Thursday_tagesschau-3781|JETZT WIE-AUSSEHEN MORGEN FREITAG ZWANZIG NOVEMBER
+test/19September_2010_Sunday_tagesschau-3802|SUED WIND NUR SCHWACH WEHEN BISSCHEN WEHEN STURM
+test/14April_2010_Wednesday_tagesschau-3809|AUCH ABER REGION SUEDOST WECHSELHAFT
+test/14February_2010_Sunday_tagesschau-3834|LUFT KALT DESHALB DEUTSCHLAND
+test/25June_2010_Friday_tagesschau-3877|WOCHENENDE VIEL SONNE TEMPERATUR
+test/25June_2010_Friday_tagesschau-3879|AUCH ABEND NACHT REGEN
+test/25June_2010_Friday_tagesschau-3880|BISSCHEN
+test/25June_2010_Friday_tagesschau-3881|MORGEN WOLKE
+test/25June_2010_Friday_tagesschau-3882|SUED REGION BESONDERS BAYERN WALD BIS DANN MITTAG KOENNEN
+test/17June_2010_Thursday_tagesschau-3903|DEUTSCH WARNUNG WIND KOENNEN
+test/05June_2010_Saturday_tagesschau-3925|MONTAG NACHT
+test/05June_2010_Saturday_tagesschau-3926|NACHT HIMMEL KLAR
+test/05June_2010_Saturday_tagesschau-3932|DIENSTAG BESONDERS MEHR FREUNDLICH DABEI SCHAUER GEWITTER
+test/24March_2011_Thursday_tagesschau-3937|NACHT NORD NORDOST MOEGLICH
+test/24March_2011_Thursday_tagesschau-3938|SONST
+test/08April_2010_Thursday_tagesschau-3950|WOLKE ABER REGEN BISSCHEN
+test/08April_2010_Thursday_tagesschau-3957|MORGEN GRAD NORD
+test/08April_2010_Thursday_tagesschau-3961|MONTAG ANFANG DANN WECHSELHAFT KUEHL
+test/24April_2010_Saturday_tagesschau-3967|SONNE BISSCHEN WOLKE
+test/24April_2010_Saturday_tagesschau-3971|IX REGION FROST MOEGLICH
+test/08January_2010_Friday_tagesschau-3981|WIND MAESSIG WIND STARK WIND
+test/04May_2011_Wednesday_heute-3991|SEHEN IX REGEN
+test/04May_2011_Wednesday_heute-3995|MORGEN SCHAUER VIEL
+test/18January_2010_Monday_tagesschau-4023|GRAD MINUS BIS GRAD
+test/02December_2009_Wednesday_tagesschau-4039|JETZT WETTER WIE-AUSSEHEN MORGEN DONNERSTAG DREI
+test/02December_2009_Wednesday_tagesschau-4045|SONNE WOLKE
+test/15July_2010_Thursday_tagesschau-4056|SUED HEUTE NACHT KOENNEN GEWITTER
+test/05September_2009_Saturday_tagesschau-4085|STURM
+test/19February_2010_Friday_tagesschau-4093|TIEF DRUCK TEIL
+test/21October_2011_Friday_tagesschau-4103|HOCH WETTER
+test/21October_2011_Friday_tagesschau-4104|NEBEL SONNE BERG DANN
+test/07October_2010_Thursday_tagesschau-4117|JETZT WETTER WIE-AUSSEHEN MORGEN FREITAG ACHT
+test/07October_2010_Thursday_tagesschau-4121|BESONDERS IX NORD HEUTE NACHT WOLKE
+test/07October_2010_Thursday_tagesschau-4122|SUED VIEL NEBEL MORGEN NEBEL
+test/07October_2010_Thursday_tagesschau-4127|HEUTE NACHT GRAD FLUSS
+test/07October_2010_Thursday_tagesschau-4129|RUHIG TROCKEN FREUNDLICH BLEIBEN
+test/07December_2010_Tuesday_tagesschau-4155|FREITAG SUEDWEST SCHNEE REGEN WEST REGEN
+test/08December_2009_Tuesday_heute-4198|TEIL LIEB
+test/08December_2009_Tuesday_heute-4199|
+test/24October_2009_Saturday_tagesschau-4286|WIND SCHWACH MAESSIG
+test/24October_2009_Saturday_tagesschau-4287|WIND KOENNEN
+test/24October_2009_Saturday_tagesschau-4289|MORGEN BIS WEST BIS GRAD
+test/01April_2010_Thursday_tagesschau-4329|SAMSTAG WECHSELHAFT
+test/01April_2010_Thursday_tagesschau-4330|FREUNDLICH BISSCHEN
+test/01April_2010_Thursday_tagesschau-4331|SONNTAG REGEN TEIL GEWITTER
+test/01April_2010_Thursday_tagesschau-4332|REGEN
+test/23May_2010_Sunday_tagesschau-4337|TIEF WETTER
+test/11August_2009_Tuesday_tagesschau-4354|SUED MEHR
+test/11August_2009_Tuesday_tagesschau-4355|SONST VIEL WOLKE NORD GEWITTER KOENNEN
+test/11August_2009_Tuesday_tagesschau-4356|HEUTE REGION DANN SCHWACH WIND
+test/25November_2011_Friday_tagesschau-4398|ZEHN SONST REGION ZWEI
+test/25November_2011_Friday_tagesschau-4399|SUED SONNTAG OFT SONNE SONST REGEN
+test/12August_2010_Thursday_tagesschau-4403|KOMMEN HEISS
+test/24May_2011_Tuesday_tagesschau-4468|MORGEN HOCH DRUCK SONNE TROCKEN
+test/24May_2011_Tuesday_tagesschau-4477|KUEHL DREI ZWANZIG BIS SECHS ZWANZIG
+test/29June_2011_Wednesday_tagesschau-4490|OST BLEIBEN TROCKEN
+test/09February_2010_Tuesday_tagesschau-4504|SAMSTAG WENIG GEWITTER
+test/18February_2010_Thursday_tagesschau-4531|SONNE MOEGLICH
+test/18February_2010_Thursday_tagesschau-4532|SAMSTAG WIND
+test/18February_2010_Thursday_tagesschau-4533|WIE-IMMER
+test/28October_2009_Wednesday_tagesschau-4535|BISSCHEN REGEN
+test/28October_2009_Wednesday_tagesschau-4537|HEUTE NACHT VIEL WOLKE
+test/28October_2009_Wednesday_tagesschau-4539|MORGEN AUCH SUED SONNE
+test/28October_2009_Wednesday_tagesschau-4540|NORDOST REGEN
+test/28October_2009_Wednesday_tagesschau-4543|
+test/28October_2009_Wednesday_tagesschau-4544|MORGEN NORD ACHT SIEBZEHN
+test/04April_2010_Sunday_tagesschau-4574|DIENSTAG HAUPTSAECHLICH SONNE WOLKE MOEGLICH REGEN
+test/13September_2010_Monday_tagesschau-4592|MORGEN DIENSTAG SEPTEMBER
+test/22November_2011_Tuesday_heute-4646|WOCHENENDE VIEL REGEN MITTE
+test/07February_2011_Monday_heute-4658|GUT ABEND LIEB ZUSCHAUER
+test/28September_2009_Monday_tagesschau-4681|WIE-AUSSEHEN IN-KOMMEND
+test/28September_2009_Monday_tagesschau-4682|MITTWOCH NORD MEHR FREUNDLICH
+test/19March_2011_Saturday_tagesschau-4686|VIEL SONNE
+test/02March_2011_Wednesday_tagesschau-4702|JETZT MORGEN WETTER DONNERSTAG DRITTE
+test/04October_2010_Monday_tagesschau-4722|NACHT OST NUR SECHS
+test/04October_2010_Monday_tagesschau-4723|MORGEN BIS ZWEI GRAD
+test/12December_2009_Saturday_tagesschau-4728|NACHT SCHNEE LEICHT KUESTE DABEI
+test/24February_2011_Thursday_tagesschau-4771|SONNTAG SCHNEE BERG KOENNEN SCHNEE
+test/04December_2010_Saturday_tagesschau-4834|WIE-AUSSEHEN WETTER MORGEN SONNTAG
+test/21January_2011_Friday_tagesschau-4889|HEUTE NACHT STERN NEBEL AUCH
+test/21November_2009_Saturday_tagesschau-4907|NORDWEST STURM WEHEN
+test/21November_2009_Saturday_tagesschau-4908|ABEND STURM KOENNEN MOEGLICH
+test/28February_2011_Monday_tagesschau-4988|TEMPERATUR
+test/01June_2010_Tuesday_tagesschau-5008|NORD FREUNDLICH
+test/01June_2010_Tuesday_tagesschau-5009|WIND ZEIGEN-BILDSCHIRM WIND KOENNEN STURM
+test/29August_2009_Saturday_tagesschau-5018|HEUTE NACHT
+test/29August_2009_Saturday_tagesschau-5019|WOLKE
+test/29August_2009_Saturday_tagesschau-5020|MORGEN MOEGLICH
+test/01September_2010_Wednesday_tagesschau-5039|MORGEN IX WOLKE SCHAUER
+test/16July_2009_Thursday_tagesschau-5052|HEUTE NACHT SUED GEWITTER HIMMEL BISSCHEN
+test/21May_2010_Friday_tagesschau-5092|MORGEN NORD WOLKE SONNE MOEGLICH GEWITTER
+test/21May_2010_Friday_tagesschau-5094|WIND ABER MAESSIG
+test/21May_2010_Friday_tagesschau-5096|MORGEN NORD VIERZEHN GRAD MOEGLICH
+test/21May_2010_Friday_tagesschau-5097|SONNTAG
+test/17July_2009_Friday_tagesschau-5101|WETTER WIE-AUSSEHEN MORGEN ACHTZEHN
+test/17July_2009_Friday_tagesschau-5104|KALT LUFT
+test/17July_2009_Friday_tagesschau-5105|SUED ABEND REGEN STARK
+test/17July_2009_Friday_tagesschau-5106|DEUTSCH WARNUNG
+test/05April_2011_Tuesday_heute-5120|BESONDERS
+test/27November_2011_Sunday_tagesschau-5138|JETZT INFORMIEREN WETTER MORGEN MONTAG ACHT ZWANZIG NOVEMBER
+test/27November_2011_Sunday_tagesschau-5149|MORGEN SUED NUR ZWEI MAXIMAL
+test/27August_2010_Friday_tagesschau-5164|SONNTAG MONTAG BLEIBEN MEHR KUEHL AUCH
+test/14September_2010_Tuesday_tagesschau-5220|NACHT SIEBEN SUED ZWEI
+test/14September_2010_Tuesday_tagesschau-5223|SAMSTAG FREUNDLICH NORD SCHAUER
+test/16May_2010_Sunday_tagesschau-5226|IN-KOMMEND LUFT BLEIBEN
+test/08September_2010_Wednesday_tagesschau-5240|FREITAG IX MORGEN
+test/08September_2010_Wednesday_tagesschau-5246|SAMSTAG TEIL BISSCHEN REGEN REGION FREUNDLICH TROCKEN
+test/20July_2010_Tuesday_heute-5254|DREI
+test/06September_2009_Sunday_tagesschau-5308|MORGEN WIND WEHEN NORD
+test/06September_2009_Sunday_tagesschau-5309|HEUTE NACHT VIERZEHN
+test/23August_2010_Monday_heute-5328|MITTWOCH
+test/23August_2010_Monday_heute-5329|ABER DONNERSTAG WARM
+test/08October_2009_Thursday_tagesschau-5345|MORGEN WETTER WIE-AUSSEHEN FREITAG
+test/08October_2009_Thursday_tagesschau-5352|NACHT STURM
+test/08October_2009_Thursday_tagesschau-5353|MORGEN SCHWACH MAESSIG
+test/08October_2009_Thursday_tagesschau-5357|REGEN
+test/08October_2009_Thursday_tagesschau-5358|OST
+test/08October_2009_Thursday_tagesschau-5359|WEST SONNE
+test/01October_2012_Monday_tagesschau-5370|MEER ZWOELF GRAD
+test/08July_2010_Thursday_tagesschau-5388|MEISTENS SONNE
+test/08July_2010_Thursday_tagesschau-5389|MONTAG AUCH SONNE ABER GEWITTER DABEI
+test/21November_2011_Monday_heute-5428|SONST BISSCHEN
+test/21November_2011_Monday_heute-5437|SCHOEN ABEND
+test/05March_2011_Saturday_tagesschau-5442|MORGEN IX MEISTENS WOLKE
+test/05March_2011_Saturday_tagesschau-5443|REGION BISSCHEN SCHNEE MOEGLICH
+test/05March_2011_Saturday_tagesschau-5447|MORGEN TEMPERATUR GRAD
+test/08June_2010_Tuesday_tagesschau-5521|REGION BLEIBEN MOEGLICH GEWITTER
+test/08June_2010_Tuesday_tagesschau-5524|MORGEN SONNE WOLKE STARK MITTAG GEWITTER
+test/08June_2010_Tuesday_tagesschau-5529|DONNERSTAG FREITAG WETTER BLEIBEN
+test/08June_2010_Tuesday_tagesschau-5530|WARM MOEGLICH GEWITTER AUCH STARK
+test/06October_2011_Thursday_heute-5534|TIEF MITTE
+test/06October_2011_Thursday_heute-5535|REGEN
+test/17May_2010_Monday_heute-5576|AUCH KUEHL SONNE WARM
+test/17May_2010_Monday_heute-5577|SCHOEN ABEND WUENSCHEN
+test/18November_2009_Wednesday_tagesschau-5578|JETZT WIE-AUSSEHEN WETTER MORGEN
+test/07December_2010_Tuesday_heute-5633|BISSCHEN WEHEN TEMPERATUR MOEGLICH BERG BIS ZEHN
+test/06January_2011_Thursday_tagesschau-5641|KOENNEN
+test/15May_2010_Saturday_tagesschau-5656|MORGEN WOLKE ALPEN MOEGLICH
+test/15May_2010_Saturday_tagesschau-5659|NACHT ACHT BIS ZWEI ZWANZIG GRAD HIMMEL MOEGLICH
+test/21November_2010_Sunday_tagesschau-5672|NACHT HABEN BISSCHEN MOEGLICH BIS VIER
+test/21November_2010_Sunday_tagesschau-5676|MITTWOCH DONNERSTAG WECHSELHAFT BISSCHEN SCHNEE
+test/24November_2009_Tuesday_tagesschau-5678|SUED MORGEN LUFT MILD
+test/24November_2009_Tuesday_tagesschau-5679|WARM
+test/24November_2009_Tuesday_tagesschau-5680|BISSCHEN
+test/24November_2009_Tuesday_tagesschau-5684|NACHT BESONDERS NORD
+test/24November_2009_Tuesday_tagesschau-5685|NORD SCHWACH
+test/24November_2009_Tuesday_tagesschau-5686|MOEGLICH
+test/24November_2009_Tuesday_tagesschau-5688|HEUTE NACHT NORD ELF GRAD EINS GRAD
+test/24November_2009_Tuesday_tagesschau-5689|MITTE GRAD
+test/24November_2009_Tuesday_tagesschau-5690|DONNERSTAG BESONDERS NORDWEST SCHNEE KOENNEN
+test/24November_2009_Tuesday_tagesschau-5691|GEWITTER
+test/24November_2009_Tuesday_tagesschau-5692|SUEDOST SONNE DABEI
+test/30March_2010_Tuesday_tagesschau-5699|WEST REGEN BERG SCHNEE DABEI
+test/29August_2011_Monday_tagesschau-5710|HEUTE NACHT NORD MEISTENS BESONDERS SCHAUER
+test/30November_2009_Monday_tagesschau-5750|WEST MOEGLICH TROCKEN WOLKE SONNE TEIL
+test/30November_2009_Monday_tagesschau-5751|MORGEN REGION TEIL MOEGLICH
+test/30November_2009_Monday_tagesschau-5752|GUT TROCKEN
+test/30November_2009_Monday_tagesschau-5753|SCHWACH MAESSIG
+test/03October_2010_Sunday_tagesschau-5770|MITTWOCH WOLKE NORDWEST BISSCHEN SCHAUER TROCKEN
+test/12December_2011_Monday_heute-5800|WEST STERN SEHEN MORGEN REGEN
+test/12December_2011_Monday_heute-5804|WEST WOLKE
+test/12December_2011_Monday_heute-5805|WENN SCHNEE AUCH
+test/12December_2011_Monday_heute-5811|REGEN
+test/25March_2011_Friday_tagesschau-5828|REGION SONNE MEHR WOLKE NUR BISSCHEN REGEN
+test/09November_2010_Tuesday_heute-5840|JETZT SCHOEN ABEND TSCHUESS
+test/28August_2009_Friday_tagesschau-5878|WIND MAESSIG IX DANN STARK
+test/28August_2009_Friday_tagesschau-5879|STURM
+test/28August_2009_Friday_tagesschau-5881|IX MORGEN ZWEI ZWANZIG
+test/28August_2009_Friday_tagesschau-5882|NUR SECHSZEHN GRAD
+test/28August_2009_Friday_tagesschau-5883|SONNTAG NORD IX SCHAUER
+test/28August_2009_Friday_tagesschau-5884|SONST VIEL SONNE
+test/28August_2009_Friday_tagesschau-5886|NACHT IX SCHAUER GEWITTER
+test/09August_2010_Monday_heute-5890|IX FUENF BIS VIER
+test/09August_2010_Monday_heute-5891|WEITER
+test/09August_2010_Monday_heute-5892|HEUTE NACHT SUEDOST FRISCH ZEHN
+test/16December_2009_Wednesday_tagesschau-5907|JETZT MORGEN DONNERSTAG
+test/16December_2009_Wednesday_tagesschau-5912|TAG AUCH REGEN
+test/16December_2009_Wednesday_tagesschau-5913|IX WEST UND SCHNEE REGEN MOEGLICH GLATT
+test/16December_2009_Wednesday_tagesschau-5914|MITTE
+test/04October_2010_Monday_heute-5953|TEMPERATUR REGEN MEHR
+test/09June_2010_Wednesday_tagesschau-5960|DAZU LUFT WARM KOENNEN GEWITTER
+test/09June_2010_Wednesday_tagesschau-5961|DEUTSCH DIENST MOEGLICH
+test/11May_2010_Tuesday_heute-5990|MORGEN VOR MITTAG OST REGEN
+test/11May_2010_Tuesday_heute-5994|ZWANZIG IN-KOMMEND
+test/25August_2010_Wednesday_heute-6005|GRUND DESHALB REGION WARM SONNE
+test/25August_2010_Wednesday_heute-6006|ABEND GEWITTER KOENNEN
+test/07April_2010_Wednesday_tagesschau-6024|JETZT WIE-AUSSEHEN MORGEN DONNERSTAG APRIL WETTER
+test/24May_2011_Tuesday_heute-6062|SCHOEN ABEND poss-EUCH
+test/24May_2011_Tuesday_heute-6067|SONNE AUCH
+test/24September_2009_Thursday_heute-6079|JETZT ZEIGEN-BILDSCHIRM
+test/24September_2009_Thursday_heute-6080|ABER SAMSTAG
+test/24September_2009_Thursday_heute-6081|HEUTE NACHT BAYERN BISSCHEN
+test/24September_2009_Thursday_heute-6082|SEHEN NEBEL
+test/24September_2009_Thursday_heute-6083|FUENF
+test/24September_2009_Thursday_heute-6084|MORGEN GRAD
+test/24September_2009_Thursday_heute-6090|WOCHE
+test/24September_2009_Thursday_heute-6091|SCHOEN ABEND
+test/18December_2010_Saturday_tagesschau-6118|JETZT WETTER WIE-AUSSEHEN SONNTAG
+test/18December_2010_Saturday_tagesschau-6125|TEIL
+test/18December_2010_Saturday_tagesschau-6126|SCHWACH WEHEN IX
+test/07August_2009_Friday_tagesschau-6165|SCHON WARNUNG DEUTSCH KOENNEN
+test/21April_2010_Wednesday_tagesschau-6235|MORGEN NORD NEUN GRAD ACHTZEHN GRAD
+test/26July_2010_Monday_tagesschau-6266|MITTWOCH NORDWEST REGEN SCHAUER TEIL GEWITTER
+test/26July_2010_Monday_tagesschau-6267|BLEIBEN WECHSELHAFT
+test/26July_2010_Monday_tagesschau-6268|TEMPERATUR
+test/16September_2010_Thursday_tagesschau-6278|SONNTAG NORD SONNE SCHAUER SONST FREUNDLICH
+test/17February_2011_Thursday_tagesschau-6310|TAG MEHR STARK SONNE BISSCHEN
+test/24January_2013_Thursday_tagesschau-6322|SONNTAG BISSCHEN MEHR MILD
+test/24July_2010_Saturday_tagesschau-6343|DIENSTAG SUED SCHAUER TEIL GEWITTER NORD FREUNDLICH
+test/06June_2010_Sunday_tagesschau-6363|GEWITTER TEIL NACHT
+test/10January_2011_Monday_tagesschau-6402|WEST REGEN GLATT
+test/10January_2011_Monday_tagesschau-6403|IN-KOMMEND DANN WECHSELHAFT STARK MILD
+test/06May_2011_Friday_tagesschau-6434|WEHEN FRISCH
+test/06May_2011_Friday_tagesschau-6435|HEUTE NACHT ZWOELF GRAD BAYERN
+test/06May_2011_Friday_tagesschau-6436|ZWANZIG BIS ACHT ZWANZIG GRAD NORD
+test/20June_2011_Monday_heute-6510|SO AUCH ABER SCHOEN
+test/20June_2011_Monday_heute-6511|GUT ABEND
+test/20June_2011_Monday_heute-6516|BISSCHEN WARM WETTER
+test/20November_2009_Friday_tagesschau-6560|JETZT WETTER WIE-AUSSEHEN MORGEN SAMSTAG ZWANZIG NOVEMBER
+test/20November_2009_Friday_tagesschau-6561|SUED HEUTE NACHT BISSCHEN REGEN DEUTSCH
+test/20November_2009_Friday_tagesschau-6562|SONST TROCKEN SONST TEIL FREUNDLICH
+test/20November_2009_Friday_tagesschau-6565|FLUSS NEBEL
+test/20November_2009_Friday_tagesschau-6566|MORGEN ABER TROCKEN
+test/20November_2009_Friday_tagesschau-6567|MEHR
+test/20November_2009_Friday_tagesschau-6574|TEIL MEHR KUEHL AUCH
+test/20November_2009_Friday_tagesschau-6575|DANN MILD
+test/01June_2010_Tuesday_heute-6603|LIEB GUT ABEND
+test/24July_2011_Sunday_tagesschau-6630|SONNE MEHR
+test/24July_2011_Sunday_tagesschau-6631|MITTWOCH SCHAUER GEWITTER
+test/24July_2011_Sunday_tagesschau-6632|GLEICH
+test/24August_2009_Monday_heute-6642|MORGEN BIS SONNE
+test/24August_2009_Monday_heute-6643|
+test/24August_2009_Monday_heute-6648|WARM GEWITTER
+test/18April_2010_Sunday_tagesschau-6663|MITTAG SUED
+test/24February_2011_Thursday_heute-6666|WEST FUENF NEU SCHNEE
+test/01April_2010_Thursday_heute-6704|
+test/01April_2010_Thursday_heute-6705|MORGEN SONNE
+test/08July_2011_Friday_tagesschau-6727|MORGEN KOMMEN
+test/08July_2011_Friday_tagesschau-6729|BAYERN WARNUNG DEUTSCH WETTER NACHT SUED GEWITTER
+test/23July_2009_Thursday_tagesschau-6750|MORGEN WETTER FREITAG VIER ZWANZIG JULI
+test/23July_2009_Thursday_tagesschau-6751|WOLKE KUEHL KOENNEN
+test/23July_2009_Thursday_tagesschau-6752|GEWITTER
+test/02June_2010_Wednesday_heute-6789|REGEN KOENNEN
+test/18February_2011_Friday_tagesschau-6825|DEUTSCH MEHR REGEN
+test/10May_2010_Monday_tagesschau-6854|GEWITTER KOENNEN
+test/06July_2011_Wednesday_tagesschau-6865|SPAETER BISSCHEN MEHR TROCKEN REGION
+test/08November_2010_Monday_heute-6874|ABEND LIEB ZUSCHAUER poss-EUCH
+test/08November_2010_Monday_heute-6875|EUROPA WETTER
+test/10August_2009_Monday_heute-6893|NACHT OST REGEN
+test/10August_2009_Monday_heute-6897|
+test/10August_2009_Monday_heute-6902|BIS VIER ZWANZIG GRAD REGION
+test/10August_2009_Monday_heute-6903|SUED BIS ZWANZIG
+test/08November_2010_Monday_tagesschau-6922|IN-KOMMEND WETTER STARK TIEF
+test/13December_2010_Monday_tagesschau-6940|NACHT MINUS ZWEI BERG BIS MINUS FUENFZEHN GRAD
+test/13December_2010_Monday_tagesschau-6944|FREITAG
+test/01June_2011_Wednesday_tagesschau-6952|REGION VIEL SONNE BISSCHEN
+test/15December_2009_Tuesday_tagesschau-6963|SUEDOST MORGEN SCHNEE SCHNEIEN
+test/24January_2011_Monday_heute-6981|WIEDER TEMPERATUR NACH MITTAG
+test/18January_2011_Tuesday_tagesschau-6987|JETZT WETTER VORAUS MORGEN MITTWOCH NEUNZEHN
+test/18January_2011_Tuesday_tagesschau-6989|SONNE BISSCHEN NUR HAUPTSAECHLICH
+test/17January_2011_Monday_tagesschau-7005|AUCH VIEL WOLKE ABER REGEN BISSCHEN BESONDERS
+test/29November_2009_Sunday_tagesschau-7044|REGION MOEGLICH AUCH
+test/29November_2009_Sunday_tagesschau-7045|REGION NOCH
+test/25August_2009_Tuesday_tagesschau-7085|REGEN GEWITTER BESONDERS SUEDOST STARK KOENNEN
+test/25August_2009_Tuesday_tagesschau-7086|DEUTSCH SCHON WARNUNG JETZT DIENST
+test/25August_2009_Tuesday_tagesschau-7092|NACHT TEMPERATUR ZEHN BIS ACHTZEHN
+test/07December_2009_Monday_tagesschau-7103|KOENNEN SONNE
+test/30March_2011_Wednesday_tagesschau-7125|JETZT WETTER WIE-AUSSEHEN MORGEN DONNERSTAG EINS MAERZ
+test/01May_2010_Saturday_tagesschau-7194|TAG BAYERN MAXIMAL ZWANZIG GRAD
+test/01May_2010_Saturday_tagesschau-7195|MONTAG AUCH MEHR WOLKE SONNE HAUPTSAECHLICH REGEN HAUPTSAECHLICH GEWITTER
+test/04July_2010_Sunday_tagesschau-7205|TEIL FREUNDLICH
+test/04July_2010_Sunday_tagesschau-7206|WENN GEWITTER SCHWACH
+test/29September_2011_Thursday_tagesschau-7236|SAMSTAG SONNTAG
+test/24January_2013_Thursday_heute-7259|BISSCHEN SCHNEE SACHSEN MOEGLICH
+test/24January_2013_Thursday_heute-7266|SAMSTAG KALT BIS ZEHN
+test/26April_2010_Monday_tagesschau-7272|REGEN ALPEN KOENNEN NEBEL
+test/24June_2010_Thursday_tagesschau-7300|JETZT MORGEN WETTER WIE-AUSSEHEN FREITAG FUENF ZWANZIG JUNI
+test/27November_2009_Friday_tagesschau-7340|MONTAG MAL REGEN
+test/27November_2009_Friday_tagesschau-7341|REGEN BISSCHEN
+test/27November_2009_Friday_tagesschau-7342|DIENSTAG
+test/06February_2010_Saturday_tagesschau-7362|
+test/06February_2010_Saturday_tagesschau-7363|SCHNEE
+test/06February_2010_Saturday_tagesschau-7365|WIND SCHWACH WEHEN
+test/27June_2010_Sunday_tagesschau-7392|MORGEN TEMPERATUR ZWANZIG NORD DREISSIG GRAD
+test/04January_2010_Monday_heute-7395|ABEND LIEB ZUSCHAUER BEGRUESSEN
+test/29July_2010_Thursday_tagesschau-7420|SAMSTAG FREUNDLICH REGION
+test/29July_2010_Thursday_tagesschau-7421|SCHAUER NUR
+test/15February_2011_Tuesday_tagesschau-7473|SCHNEE
+test/15February_2011_Tuesday_tagesschau-7474|TAG MEHR ODER NEBEL
+test/28May_2010_Friday_tagesschau-7501|HEUTE NACHT ELF BAYERN EINS GRAD
+test/13July_2009_Monday_tagesschau-7507|DEUTSCH
+test/13July_2009_Monday_tagesschau-7508|HEISS WARM
+test/13July_2009_Monday_tagesschau-7509|STARK GEWITTER REGEN
+test/13July_2009_Monday_tagesschau-7510|HEUTE NACHT IX MEHR BIS
+test/23September_2009_Wednesday_tagesschau-7589|STARK WOLKE
+test/23September_2009_Wednesday_tagesschau-7590|SONST REGION FREUNDLICH
+test/14March_2011_Monday_tagesschau-7600|ABER REST REGION FREUNDLICH
+test/03June_2011_Friday_tagesschau-7644|SUED GEWITTER KOENNEN
+test/03October_2012_Wednesday_tagesschau-7654|HEUTE NACHT KOMMEN
+test/25November_2009_Wednesday_tagesschau-7666|MORGEN WETTER WIE-AUSSEHEN DONNERSTAG SECHS ZWANZIG NOVEMBER
+test/25November_2009_Wednesday_tagesschau-7668|REGION BISSCHEN LUFT MILD
+test/25November_2009_Wednesday_tagesschau-7677|FREITAG
+test/25November_2009_Wednesday_tagesschau-7678|NORDWEST KOENNEN GEWITTER
+test/12April_2010_Monday_heute-7690|MORGEN NORD VIEL SONNE
+test/15October_2009_Thursday_tagesschau-7715|GUT REGEN
+test/06January_2010_Wednesday_tagesschau-7728|AB FREITAG MEHR SCHNEE
+test/06January_2010_Wednesday_tagesschau-7736|WOCHENENDE IX SCHNEE KOENNEN
+test/06January_2010_Wednesday_tagesschau-7737|BLEIBEN WIND
+test/04December_2011_Sunday_tagesschau-7791|DIENSTAG REGEN SCHNEE
+test/04December_2011_Sunday_tagesschau-7792|
+test/25January_2013_Friday_tagesschau-7811|JETZT WIE-AUSSEHEN WETTER MORGEN SAMSTAG ZWANZIG
+test/23January_2011_Sunday_tagesschau-7823|WETTER WIE-AUSSEHEN MORGEN MONTAG VIER ZWANZIG
+test/26May_2010_Wednesday_heute-7863|LIEB ZUSCHAUER poss-EUCH GUT ABEND
+test/20February_2010_Saturday_tagesschau-7899|MINUS FLUSS PLUS
+test/15February_2011_Tuesday_heute-7911|SONNE KOENNEN SPAETER DANN SUEDWEST
+test/10December_2009_Thursday_heute-7943|NORD MOEGLICH SONNE
+test/10December_2009_Thursday_heute-7944|SAMSTAG NOCH SCHNEE
+test/10December_2009_Thursday_heute-7945|MOEGLICH SONNE
+test/13July_2011_Wednesday_tagesschau-7978|TIEF REGEN
+test/28January_2013_Monday_heute-7998|WEST KOMMEN OST REGION MITTE AUCH
+test/11January_2011_Tuesday_tagesschau-8017|JETZT WIE-AUSSEHEN WETTER MORGEN ZWOELF JANUAR
+test/11January_2011_Tuesday_tagesschau-8021|NORDOST BAYERN SCHNEE SCHNEIEN REGEN MIT FROST
+test/11January_2011_Tuesday_tagesschau-8032|SUED FREUNDLICH TEIL
+test/11November_2009_Wednesday_tagesschau-8041|IM-VERLAUF AUCH
+test/11November_2009_Wednesday_tagesschau-8042|WIND SCHWACH MAESSIG WEHEN
+test/07April_2011_Thursday_tagesschau-8101|VIEL SONNE WENIG
+test/29March_2011_Tuesday_tagesschau-8108|MORGEN WIE-AUSSEHEN WETTER MITTWOCH
+test/27May_2011_Friday_tagesschau-8129|MORGEN NORD FUENFZEHN DREI ZWANZIG
+test/16June_2010_Wednesday_tagesschau-8148|NORD REGION KOENNEN SEHEN REGEN
+test/16June_2010_Wednesday_tagesschau-8149|
+test/20October_2010_Wednesday_tagesschau-8210|HEUTE NACHT SCHAUER IX AUCH GEWITTER
+test/20October_2010_Wednesday_tagesschau-8214|MORGEN WOLKE SONST TEIL SONNE
+test/14September_2010_Tuesday_heute-8237|DEUTSCH NORD SCHON AUCH
+test/14September_2010_Tuesday_heute-8238|MEHR
+test/14September_2010_Tuesday_heute-8239|TIEF STURM
+test/09June_2010_Wednesday_heute-8259|NACHT WARM
+test/09June_2010_Wednesday_heute-8260|NACHT
+test/12December_2011_Monday_tagesschau-8269|IX KOMMEN STURM
+test/19October_2010_Tuesday_tagesschau-8289|TAG DANN REGEN NORDWEST BERG AUCH REGEN SCHNEE SCHNEIEN
+test/19October_2010_Tuesday_tagesschau-8290|ABEND IX UND MOEGLICH REGEN
+test/19October_2010_Tuesday_tagesschau-8291|GEWITTER
+test/24November_2011_Thursday_tagesschau-8341|SONNTAG MEHR WIND NORDWEST WOLKE BISSCHEN
+test/24November_2011_Thursday_tagesschau-8342|MONTAG MEISTENS TROCKEN SONNE WOLKE SPAETER
+test/28September_2010_Tuesday_heute-8343|GUT ABEND
+test/28September_2010_Tuesday_heute-8344|TAG OST
+test/28September_2010_Tuesday_heute-8355|GRAD
+test/27May_2010_Thursday_tagesschau-8382|SONNTAG REGEN AUCH DABEI GEWITTER
+test/29March_2010_Monday_tagesschau-8387|GEWITTER
+test/29March_2010_Monday_tagesschau-8388|
+test/29March_2010_Monday_tagesschau-8389|WECHSELHAFT
+test/03September_2010_Friday_tagesschau-8428|TAG WEST FREUNDLICH SONST SONNE WOLKE WECHSELHAFT SCHAUER
+test/03September_2010_Friday_tagesschau-8429|MOEGLICH GEWITTER
+test/13August_2009_Thursday_tagesschau-8491|SONNTAG WIEDER WECHSELHAFT SCHAUER GEWITTER STARK
+test/13August_2009_Thursday_tagesschau-8492|MONTAG WECHSELHAFT BISSCHEN KUEHL
+test/25August_2010_Wednesday_tagesschau-8507|WEST KOMMEN TIEF REGEN
+test/25August_2010_Wednesday_tagesschau-8508|SUED MORGEN HOCH NOCH GUT WARM
+test/25August_2010_Wednesday_tagesschau-8509|HEUTE NACHT WEST REGEN KOENNEN
+test/25August_2010_Wednesday_tagesschau-8516|MORGEN GRAD
+test/04January_2010_Monday_tagesschau-8544|MORGEN WETTER WIE-AUSSEHEN DIENSTAG FUENFTE JANUAR
+test/04January_2010_Monday_tagesschau-8550|NORD WIND MAESSIG KUESTE KOENNEN
+test/04January_2010_Monday_tagesschau-8551|SUED WIND SCHWACH
+test/04January_2010_Monday_tagesschau-8552|NACHT MINUS
+test/07October_2010_Thursday_heute-8568|WEST ZWANZIG NUR
+test/30July_2011_Saturday_tagesschau-8595|KOENNEN SCHWACH MAESSIG KOENNEN STARK
+test/13November_2009_Friday_tagesschau-8607|REGEN WEST MEHR
+test/13November_2009_Friday_tagesschau-8608|NORDWEST
+test/29April_2010_Thursday_heute-8626|NOCH SONNE NOCH
+test/29April_2010_Thursday_heute-8627|DANN GEWITTER
+test/11April_2010_Sunday_tagesschau-8632|JETZT WETTER MORGEN MONTAG
+test/11December_2010_Saturday_tagesschau-8661|SCHNEE BIS BERG
+test/11December_2010_Saturday_tagesschau-8669|MITTWOCH GLEICH MINUS NEUN BIS MINUS GRAD
+test/05July_2010_Monday_heute-8688|MORGEN MITTE EUROPA DREIZEHN BIS SECHS ZWANZIG
+test/05July_2010_Monday_heute-8689|OST BIS ZWANZIG
+test/24January_2010_Sunday_tagesschau-8703|JETZT WIE-AUSSEHEN MORGEN FUENF ZWANZIG
+test/06October_2012_Saturday_tagesschau-8742|DIENSTAG DAZU REGEN KOENNEN
+test/06October_2012_Saturday_tagesschau-8743|SUED FREUNDLICH
+test/11February_2010_Thursday_tagesschau-8761|WOCHENENDE MEHR TROCKEN BLEIBEN
+test/11September_2009_Friday_tagesschau-8771|JETZT WETTER MORGEN SAMSTAG ZWOELF SEPTEMBER
+test/11September_2009_Friday_tagesschau-8772|DEUTSCH LAND
+test/11September_2009_Friday_tagesschau-8773|TIEF NUR SCHWACH
+test/11September_2009_Friday_tagesschau-8780|SONST WECHSELHAFT SONNE WOLKE
+test/11September_2009_Friday_tagesschau-8781|WIND SCHWACH MAESSIG MEER AUCH FRISCH KOMMEN
+test/11September_2009_Friday_tagesschau-8782|HEUTE NACHT VIERZEHN ZWISCHEN ZWEI
+test/01July_2010_Thursday_tagesschau-8797|SONNTAG GEWITTER SONNE
+test/21August_2010_Saturday_tagesschau-8822|HEUTE NACHT NEUNZEHN ZWISCHEN SUEDOST
