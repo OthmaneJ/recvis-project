@@ -2,11 +2,13 @@ import argparse
 import os
 
 import sys
+sys.path.append("/content/drive/MyDrive/MVA/reconaissance objet/projet/recvis-project/slt")
+
 from signjoey.training import train
 from signjoey.prediction import test
 
-sys.path.append("/vol/research/extol/personal/cihan/code/SignJoey")
-
+# sys.path.append("/vol/research/extol/personal/cihan/code/SignJoey")
+# sys.path.append("/drive/MyDrive/MVA/reconaissance objet/projet/recvis-project/slt/signjoey")
 
 def main():
     ap = argparse.ArgumentParser("Joey NMT")

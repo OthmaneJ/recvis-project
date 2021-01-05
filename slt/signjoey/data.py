@@ -61,6 +61,12 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
         test_paths = os.path.join(data_path, data_cfg["test"])
         pad_feature_size = data_cfg["feature_size"]
 
+    pad_body_dope_feature_size = data_cfg['body_dope_feature_size']
+    pad_face_dope_feature_size = data_cfg['face_dope_feature_size']
+    dope_train_paths = os.path.join(data_path, data_cfg["dope_train"])
+    dope_test_paths = os.path.join(data_path, data_cfg["dope_test"])
+    dope_dev_paths = os.path.join(data_path, data_cfg["dope_dev"])
+
     level = data_cfg["level"]
     txt_lowercase = data_cfg["txt_lowercase"]
     max_sent_length = data_cfg["max_sent_length"]
@@ -94,6 +100,30 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
         pad_token=torch.zeros((pad_feature_size,)),
     )
 
+    sgn_body_dope_field = data.Field(
+        use_vocab=False,
+        init_token=None,
+        dtype=torch.float32,
+        preprocessing=tokenize_features,
+        tokenize=lambda features: features,  # TODO (Cihan): is this necessary?
+        batch_first=True,
+        include_lengths=True,
+        postprocessing=stack_features,
+        pad_token=torch.zeros((pad_body_dope_feature_size,)),
+    )
+
+    sgn_face_dope_field = data.Field(
+        use_vocab=False,
+        init_token=None,
+        dtype=torch.float32,
+        preprocessing=tokenize_features,
+        tokenize=lambda features: features,  # TODO (Cihan): is this necessary?
+        batch_first=True,
+        include_lengths=True,
+        postprocessing=stack_features,
+        pad_token=torch.zeros((pad_face_dope_feature_size,)),
+    )
+
     gls_field = data.Field(
         pad_token=PAD_TOKEN,
         tokenize=tokenize_text,
@@ -115,7 +145,9 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
 
     train_data = SignTranslationDataset(
         path=train_paths,
-        fields=(sequence_field, signer_field, sgn_field, gls_field, txt_field),
+        path_dope=dope_train_paths,
+        kind_data='train',
+        fields=(sequence_field, signer_field, sgn_field, sgn_body_dope_field, sgn_face_dope_field, gls_field, txt_field),
         filter_pred=lambda x: len(vars(x)["sgn"]) <= max_sent_length
         and len(vars(x)["txt"]) <= max_sent_length,
     )
@@ -153,7 +185,9 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
 
     dev_data = SignTranslationDataset(
         path=dev_paths,
-        fields=(sequence_field, signer_field, sgn_field, gls_field, txt_field),
+        path_dope=dope_dev_paths,
+        kind_data='dev',
+        fields=(sequence_field, signer_field, sgn_field, sgn_body_dope_field, sgn_face_dope_field, gls_field, txt_field),
     )
     random_dev_subset = data_cfg.get("random_dev_subset", -1)
     if random_dev_subset > -1:
@@ -167,7 +201,9 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
     # check if target exists
     test_data = SignTranslationDataset(
         path=test_paths,
-        fields=(sequence_field, signer_field, sgn_field, gls_field, txt_field),
+        path_dope=dope_test_paths,
+        kind_data='test',
+        fields=(sequence_field, signer_field, sgn_field, sgn_body_dope_field, sgn_face_dope_field, gls_field, txt_field),
     )
 
     gls_field.vocab = gls_vocab

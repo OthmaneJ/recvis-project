@@ -15,6 +15,10 @@ def load_dataset_file(filename):
         loaded_object = pickle.load(f)
         return loaded_object
 
+def load_dope_dataset(filename):
+  with open(filename, 'rb') as file_:
+    loaded_data = pickle.load(file_)
+    return loaded_file
 
 class SignTranslationDataset(data.Dataset):
     """Defines a dataset for machine translation."""
@@ -26,6 +30,8 @@ class SignTranslationDataset(data.Dataset):
     def __init__(
         self,
         path: str,
+        path_dope: str,
+        kind_data: str,
         fields: Tuple[RawField, RawField, Field, Field, Field],
         **kwargs
     ):
@@ -33,6 +39,8 @@ class SignTranslationDataset(data.Dataset):
 
         Arguments:
             path: Common prefix of paths to the data files for both languages.
+            path_dope: Common prefix for paths to the dope dataset.
+            kind_data: Data considered dev or train or test
             exts: A tuple containing the extension to path for each language.
             fields: A tuple containing the fields that will be used for data
                 in each language.
@@ -44,8 +52,10 @@ class SignTranslationDataset(data.Dataset):
                 ("sequence", fields[0]),
                 ("signer", fields[1]),
                 ("sgn", fields[2]),
-                ("gls", fields[3]),
-                ("txt", fields[4]),
+                ("body_dope", fields[3]),
+                ("face_dope", fields[4]),
+                ("gls", fields[5]),
+                ("txt", fields[6]),
             ]
 
         if not isinstance(path, list):
@@ -64,7 +74,9 @@ class SignTranslationDataset(data.Dataset):
                     samples[seq_id]["sign"] = torch.cat(
                         [samples[seq_id]["sign"], s["sign"]], axis=1
                     )
+
                 else:
+
                     samples[seq_id] = {
                         "name": s["name"],
                         "signer": s["signer"],
@@ -73,6 +85,13 @@ class SignTranslationDataset(data.Dataset):
                         "sign": s["sign"],
                     }
 
+        for annotation_file in path_dope:
+            tmp = load_dope_dataset(annotation_file)
+            for key in tmp.keys():
+                seq_id = kind_data + '/' + key.strip('.mp4')
+                assert seq_id in samples
+                samples[seq_id]['body_dope'] = np.vstack([tmp[key][i]['body'][0]['pose3d'].reshape((-1)) for i in range (len(tmp[key]))])
+                samples[seq_id]['face_dope'] = np.vstack([tmp[key][i]['face'][0]['pose3d'].reshape((-1)) for i in range (len(tmp[key]))])
         examples = []
         for s in samples:
             sample = samples[s]
@@ -83,6 +102,8 @@ class SignTranslationDataset(data.Dataset):
                         sample["signer"],
                         # This is for numerical stability
                         sample["sign"] + 1e-8,
+                        sample['body_dope'],
+                        sample['face_dope'],
                         sample["gloss"].strip(),
                         sample["text"].strip(),
                     ],
