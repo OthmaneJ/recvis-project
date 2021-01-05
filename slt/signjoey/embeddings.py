@@ -172,7 +172,7 @@ class SpatialEmbeddings(nn.Module):
     def __init__(
         self,
         embedding_dim: int,
-        input_size: int,
+        input_size: list,
         num_heads: int,
         freeze: bool = False,
         norm_type: str = None,
@@ -186,14 +186,19 @@ class SpatialEmbeddings(nn.Module):
         Use scaling for the Transformer.
 
         :param embedding_dim:
-        :param input_size:
+        :param input_size: [input of frame embedding, face dope embedding, body dope embedding]
         :param freeze: freeze the embeddings during training
         """
         super().__init__()
 
         self.embedding_dim = embedding_dim
-        self.input_size = input_size
+        self.input_size = input_size[0]
+        self.input_size_face_dope = input_size[1]
+        self.input_size_body_dope = input_size[2]
         self.ln = nn.Linear(self.input_size, self.embedding_dim)
+        self.ln_face_dope = nn.Linear(self.input_size_face_dope, self.embedding_dim)
+        self.ln_body_dope = nn.Linear(self.input_size_body_dope, self.embedding_dim)
+        self.ln_fusion = nn.Linear(3*self.embedding_dim, self.embedding_dim)
 
         self.norm_type = norm_type
         if self.norm_type:
@@ -216,15 +221,20 @@ class SpatialEmbeddings(nn.Module):
             freeze_params(self)
 
     # pylint: disable=arguments-differ
-    def forward(self, x: Tensor, mask: Tensor) -> Tensor:
+    def forward(self, x1: Tensor, x2: Tensor, x3: Tensor, mask: Tensor) -> Tensor:
         """
         :param mask: frame masks
         :param x: input frame features
         :return: embedded representation for `x`
         """
 
-        x = self.ln(x)
-
+        x1 = self.ln(x1)
+        x2 = self.ln_face_dope(x2)
+        x3 = self.ln_body_dope(x3)
+        
+        x = torch.cat((x1, x2, x3), dim=1)
+        x = self.ln_fusion(x)
+        
         if self.norm_type:
             x = self.norm(x, mask)
 

@@ -79,6 +79,8 @@ class SignModel(nn.Module):
         self,
         sgn: Tensor,
         sgn_mask: Tensor,
+        sgn_face_dope: Tensor,
+        sgn_body_dope: Tensor,
         sgn_lengths: Tensor,
         txt_input: Tensor,
         txt_mask: Tensor = None,
@@ -95,7 +97,9 @@ class SignModel(nn.Module):
         :return: decoder outputs
         """
         encoder_output, encoder_hidden = self.encode(
-            sgn=sgn, sgn_mask=sgn_mask, sgn_length=sgn_lengths
+            sgn=sgn, sgn_mask=sgn_mask, sgn_length=sgn_lengths,
+            sgn_face_dope=sgn_face_dope,
+            sgn_body_dope=sgn_body_dope,
         )
 
         if self.do_recognition:
@@ -125,7 +129,8 @@ class SignModel(nn.Module):
         return decoder_outputs, gloss_probabilities
 
     def encode(
-        self, sgn: Tensor, sgn_mask: Tensor, sgn_length: Tensor
+        self, sgn: Tensor, sgn_mask: Tensor, sgn_length: Tensor,
+        sgn_face_dope: Tensor, sgn_body_dope: Tensor
     ) -> (Tensor, Tensor):
         """
         Encodes the source sentence.
@@ -136,7 +141,7 @@ class SignModel(nn.Module):
         :return: encoder outputs (output, hidden_concat)
         """
         return self.encoder(
-            embed_src=self.sgn_embed(x=sgn, mask=sgn_mask),
+            embed_src=self.sgn_embed(x1=sgn, x2=sgn_face_dope, x3=sgn_body_dope, mask=sgn_mask),
             src_length=sgn_length,
             mask=sgn_mask,
         )
@@ -198,6 +203,8 @@ class SignModel(nn.Module):
         decoder_outputs, gloss_probabilities = self.forward(
             sgn=batch.sgn,
             sgn_mask=batch.sgn_mask,
+            sgn_face_dope=batch.sgn_face_dope,
+            sgn_body_dope=batch.sgn_body_dope,
             sgn_lengths=batch.sgn_lengths,
             txt_input=batch.txt_input,
             txt_mask=batch.txt_mask,
