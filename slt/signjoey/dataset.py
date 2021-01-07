@@ -18,8 +18,8 @@ def load_dataset_file(filename):
 
 def load_dope_dataset(filename):
   with open(filename, 'rb') as file_:
-    loaded_object = pickle.load(file_)
-    return loaded_object
+      loaded_object = pickle.load(file_)
+      return loaded_object
 
 class SignTranslationDataset(data.Dataset):
     """Defines a dataset for machine translation."""
@@ -85,27 +85,33 @@ class SignTranslationDataset(data.Dataset):
                         "text": s["text"],
                         "sign": s["sign"],
                     }
+        print('dope path {}'.format(path_dope))
+        tmp = load_dope_dataset(path_dope)
+        for key in tmp.keys():
+            seq_id = kind_data + '/' + key.strip('.mp4')
+            try:
+                assert seq_id in samples, "the sequence {} is not in keys".format(seq_id)
+            except:
+                continue
 
-        for annotation_file in path_dope:
-            tmp = load_dope_dataset(annotation_file)
-            for key in tmp.keys():
-                seq_id = kind_data + '/' + key.strip('.mp4')
-                assert seq_id in samples
-                samples[seq_id]['body_dope'], samples[seq_id]['face_dope'] = [], []
-                for i in range(len(tmp[key])):
-                    if len(tmp[key][i]['body']) > 0:
-                        samples[seq_id]['body_dope'].append(tmp[key][i]['body'][0]['pose3d'].reshape(-1)) 
-                    else: 
-                        samples[seq_id]['body_dope'].append(np.zeros(39)) 
-                    if len(tmp[key][i]['face']) > 0:
-                        samples[seq_id]['face_dope'].append(tmp[key][i]['face'][0]['pose3d'].reshape(-1))
-                    else:
-                        samples[seq_id]['face_dope'].append(np.zeros(252))
-                samples[seq_id]['body_dope'] = torch.from_numpy(np.vstack(samples[seq_id]['body_dope']))
-                samples[seq_id]['face_dope'] = torch.from_numpy(np.vstack(samples[seq_id]['face_dope']))               
+            samples[seq_id]['body_dope'], samples[seq_id]['face_dope'] = [], []
+            for i in range(len(tmp[key])):
+                if len(tmp[key][i]['body']) > 0:
+                    samples[seq_id]['body_dope'].append(tmp[key][i]['body'][0]['pose3d'].reshape(-1)) 
+                else: 
+                    samples[seq_id]['body_dope'].append(np.zeros(39)) 
+                if len(tmp[key][i]['face']) > 0:
+                    samples[seq_id]['face_dope'].append(tmp[key][i]['face'][0]['pose3d'].reshape(-1))
+                else:
+                    samples[seq_id]['face_dope'].append(np.zeros(252))
+            samples[seq_id]['body_dope'] = torch.from_numpy(np.vstack(samples[seq_id]['body_dope']))
+            samples[seq_id]['face_dope'] = torch.from_numpy(np.vstack(samples[seq_id]['face_dope']))               
         examples = []
         for s in samples:
             sample = samples[s]
+            if 'body_dope' not in samples:
+                sample['body_dope'] = torch.zeros((sample['sign'].size(0), 39))
+                sample['face_dope'] = torch.zeros((sample['sign'].size(0), 252))
             examples.append(
                 data.Example.fromlist(
                     [

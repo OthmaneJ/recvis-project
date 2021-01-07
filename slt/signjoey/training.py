@@ -371,8 +371,8 @@ class TrainManager:
             if self.do_translation:
                 processed_txt_tokens = self.total_txt_tokens
                 epoch_translation_loss = 0
-
             for batch in iter(train_iter):
+                print('OK2')
                 # reactivate training
                 # create a Batch object from torchtext batch
                 batch = Batch(
@@ -395,7 +395,6 @@ class TrainManager:
                 recognition_loss, translation_loss = self._train_batch(
                     batch, update=update
                 )
-
                 if self.do_recognition:
                     self.tb_writer.add_scalar(
                         "train/train_recognition_loss", recognition_loss, self.steps
@@ -988,6 +987,8 @@ def train(cfg_file: str) -> None:
         sgn_dim=sum(cfg["data"]["feature_size"])
         if isinstance(cfg["data"]["feature_size"], list)
         else cfg["data"]["feature_size"],
+        body_dope_dim = cfg['data']['body_dope_feature_size'],
+        face_dope_dim = cfg['data']['face_dope_feature_size'],
         do_recognition=do_recognition,
         do_translation=do_translation,
     )

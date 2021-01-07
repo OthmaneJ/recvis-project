@@ -140,6 +140,8 @@ class SignModel(nn.Module):
         :param sgn_length:
         :return: encoder outputs (output, hidden_concat)
         """
+        # print(type(sgn_face_dope))
+        # print(sgn_face_dope)
         return self.encoder(
             embed_src=self.sgn_embed(x1=sgn, x2=sgn_face_dope, x3=sgn_body_dope, mask=sgn_mask),
             src_length=sgn_length,
@@ -262,7 +264,9 @@ class SignModel(nn.Module):
         """
 
         encoder_output, encoder_hidden = self.encode(
-            sgn=batch.sgn, sgn_mask=batch.sgn_mask, sgn_length=batch.sgn_lengths
+            sgn=batch.sgn, sgn_mask=batch.sgn_mask, 
+            sgn_face_dope=batch.sgn_face_dope, sgn_body_dope=batch.sgn_body_dope,
+            sgn_length=batch.sgn_lengths
         )
 
         if self.do_recognition:
@@ -359,6 +363,8 @@ class SignModel(nn.Module):
 def build_model(
     cfg: dict,
     sgn_dim: int,
+    body_dope_dim: int,
+    face_dope_dim: int,
     gls_vocab: GlossVocabulary,
     txt_vocab: TextVocabulary,
     do_recognition: bool = True,
@@ -381,7 +387,7 @@ def build_model(
     sgn_embed: SpatialEmbeddings = SpatialEmbeddings(
         **cfg["encoder"]["embeddings"],
         num_heads=cfg["encoder"]["num_heads"],
-        input_size=sgn_dim,
+        input_size=[sgn_dim, body_dope_dim, face_dope_dim],
     )
 
     # build encoder

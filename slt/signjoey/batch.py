@@ -40,6 +40,8 @@ class Batch:
         self.signer = torch_batch.signer
         # Sign
         self.sgn, self.sgn_lengths = torch_batch.sgn
+        self.sgn_face_dope, _ = torch_batch.face_dope
+        self.sgn_body_dope, _ = torch_batch.body_dope
         
         # Here be dragons
         if frame_subsampling_ratio:
@@ -118,6 +120,8 @@ class Batch:
         :return:
         """
         self.sgn = self.sgn.cuda()
+        self.sgn_face_dope = self.sgn_face_dope.cuda()
+        self.sgn_body_dope = self.sgn_body_dope.cuda()
         self.sgn_mask = self.sgn_mask.cuda()
 
         if self.txt_input is not None:

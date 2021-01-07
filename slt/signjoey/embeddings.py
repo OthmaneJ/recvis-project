@@ -193,8 +193,8 @@ class SpatialEmbeddings(nn.Module):
 
         self.embedding_dim = embedding_dim
         self.input_size = input_size[0]
-        self.input_size_face_dope = input_size[1]
-        self.input_size_body_dope = input_size[2]
+        self.input_size_face_dope = input_size[2]
+        self.input_size_body_dope = input_size[1]
         self.ln = nn.Linear(self.input_size, self.embedding_dim)
         self.ln_face_dope = nn.Linear(self.input_size_face_dope, self.embedding_dim)
         self.ln_body_dope = nn.Linear(self.input_size_body_dope, self.embedding_dim)
@@ -231,8 +231,7 @@ class SpatialEmbeddings(nn.Module):
         x1 = self.ln(x1)
         x2 = self.ln_face_dope(x2)
         x3 = self.ln_body_dope(x3)
-        
-        x = torch.cat((x1, x2, x3), dim=1)
+        x = torch.cat((x1, x2, x3), dim=2)
         x = self.ln_fusion(x)
         
         if self.norm_type:
