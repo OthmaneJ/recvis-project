@@ -6,6 +6,8 @@ tf.config.set_visible_devices([], "GPU")
 import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
+# import sys
+# sys.path.append('//content//drive//MyDrive///MVA//reconaissance objet//projet//recvis-project//slt')
 
 from itertools import groupby
 from signjoey.initialization import initialize_model

@@ -53,13 +53,13 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
         train_paths = [os.path.join(data_path, x) for x in data_cfg["train"]]
         dev_paths = [os.path.join(data_path, x) for x in data_cfg["dev"]]
         test_paths = [os.path.join(data_path, x) for x in data_cfg["test"]]
-        pad_feature_size = sum(data_cfg["feature_size"])
-
+        # pad_feature_size = sum(data_cfg["feature_size"])
     else:
         train_paths = os.path.join(data_path, data_cfg["train"])
         dev_paths = os.path.join(data_path, data_cfg["dev"])
         test_paths = os.path.join(data_path, data_cfg["test"])
-        pad_feature_size = data_cfg["feature_size"]
+    
+    pad_feature_size = data_cfg["feature_size"]
 
     pad_body_dope_feature_size = data_cfg['body_dope_feature_size']
     pad_face_dope_feature_size = data_cfg['face_dope_feature_size']
@@ -84,6 +84,7 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
     # NOTE (Cihan): The something was necessary to match the function signature.
     def stack_features(features, something):
         return torch.stack([torch.stack(ft, dim=0) for ft in features], dim=0)
+
 
     sequence_field = data.RawField()
     signer_field = data.RawField()

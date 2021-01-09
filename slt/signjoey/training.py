@@ -9,6 +9,8 @@ import os
 import shutil
 import time
 import queue
+# import sys
+# sys.path.append('//content//drive//MyDrive///MVA//reconaissance objet//projet//recvis-project//slt')
 
 from signjoey.model import build_model
 from signjoey.batch import Batch
@@ -372,7 +374,6 @@ class TrainManager:
                 processed_txt_tokens = self.total_txt_tokens
                 epoch_translation_loss = 0
             for batch in iter(train_iter):
-                print('OK2')
                 # reactivate training
                 # create a Batch object from torchtext batch
                 batch = Batch(

@@ -5,11 +5,11 @@ data:
     sgn: sign
     txt: text
     gls: gloss
-    train: PHOENIX2014T/phoenix14t.pami0.train
+    train: [phoenix14t.pami0.trainadd0, phoenix14t.pami0.trainadd1, phoenix14t.pami0.trainadd2, phoenix14t.pami0.trainadd3, phoenix14t.pami0.trainadd4, phoenix14t.pami0.trainadd5, phoenix14t.pami0.trainadd6] 
     dope_train: train.p
-    dev: PHOENIX2014T/phoenix14t.pami0.dev
+    dev: [phoenix14t.pami0.devadd]
     dope_dev: dev.p
-    test: PHOENIX2014T/phoenix14t.pami0.test
+    test: [phoenix14t.pami0.testadd]
     dope_test: test.p
     feature_size: 1024
     body_dope_feature_size: 39

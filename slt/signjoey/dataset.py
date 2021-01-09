@@ -9,9 +9,11 @@ import pickle
 import gzip
 import torch
 import numpy as np
-
+# import sys
+# sys.path.append('//content//drive//MyDrive///MVA//reconaissance objet//projet//recvis-project//slt')
 
 def load_dataset_file(filename):
+    print(filename)
     with gzip.open(filename, "rb") as f:
         loaded_object = pickle.load(f)
         return loaded_object
@@ -63,9 +65,12 @@ class SignTranslationDataset(data.Dataset):
             path = [path]
 
         samples = {}
+        print("The path is: {}".format(path))
         for annotation_file in path:
             tmp = load_dataset_file(annotation_file)
-            for s in tmp:
+            for key in tmp:
+                s = tmp[key]
+                num_frames = s['sign'].size(0)
                 seq_id = s["name"]
                 if seq_id in samples:
                     assert samples[seq_id]["name"] == s["name"]
@@ -84,8 +89,10 @@ class SignTranslationDataset(data.Dataset):
                         "gloss": s["gloss"],
                         "text": s["text"],
                         "sign": s["sign"],
+                        "body_dope": torch.from_numpy(s['body_3d'].reshape((num_frames, -1)).astype('float32')),
+                        "face_dope": torch.from_numpy(s['face_3d'].reshape((num_frames, -1)).astype('float32'))
                     }
-        print('dope path {}'.format(path_dope))
+        """print('dope path {}'.format(path_dope))
         tmp = load_dope_dataset(path_dope)
         for key in tmp.keys():
             seq_id = kind_data + '/' + key.strip('.mp4')
@@ -106,12 +113,13 @@ class SignTranslationDataset(data.Dataset):
                     samples[seq_id]['face_dope'].append(np.zeros(252))
             samples[seq_id]['body_dope'] = torch.from_numpy(np.vstack(samples[seq_id]['body_dope']))
             samples[seq_id]['face_dope'] = torch.from_numpy(np.vstack(samples[seq_id]['face_dope']))               
+        """
         examples = []
         for s in samples:
             sample = samples[s]
-            if 'body_dope' not in samples:
-                sample['body_dope'] = torch.zeros((sample['sign'].size(0), 39))
-                sample['face_dope'] = torch.zeros((sample['sign'].size(0), 252))
+            # if 'body_dope' not in samples:
+            #     sample['body_dope'] = torch.zeros((sample['sign'].size(0), 39))
+            #     sample['face_dope'] = torch.zeros((sample['sign'].size(0), 252))
             examples.append(
                 data.Example.fromlist(
                     [
