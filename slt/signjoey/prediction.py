@@ -332,6 +332,8 @@ def test(
     model = build_model(
         cfg=cfg["model"],
         gls_vocab=gls_vocab,
+        body_dope_dim=int(cfg['data']['body_dope_feature_size']),
+        face_dope_dim=int(cfg['data']['face_dope_feature_size']),
         txt_vocab=txt_vocab,
         sgn_dim=sum(cfg["data"]["feature_size"])
         if isinstance(cfg["data"]["feature_size"], list)
