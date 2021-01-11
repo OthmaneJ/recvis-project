@@ -89,8 +89,8 @@ class SignTranslationDataset(data.Dataset):
                         "gloss": s["gloss"],
                         "text": s["text"],
                         "sign": s["sign"],
-                        "body_dope": torch.from_numpy(s['body_3d'].reshape((num_frames, -1)).astype('float32')),
-                        "face_dope": torch.from_numpy(s['face_3d'].reshape((num_frames, -1)).astype('float32'))
+                        "body_dope": torch.from_numpy(s['body_2d'].reshape((num_frames, -1)).astype('float32')),
+                        "face_dope": torch.from_numpy(s['face_2d'].reshape((num_frames, -1)).astype('float32'))
                     }
         """print('dope path {}'.format(path_dope))
         tmp = load_dope_dataset(path_dope)

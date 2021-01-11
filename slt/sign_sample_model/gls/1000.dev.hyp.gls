@@ -4,7 +4,7 @@ dev/11August_2010_Wednesday_tagesschau-8|
 dev/25October_2010_Monday_tagesschau-22|
 dev/05May_2011_Thursday_tagesschau-25|
 dev/15December_2010_Wednesday_tagesschau-40|
-dev/10March_2011_Thursday_heute-51|BIS
+dev/10March_2011_Thursday_heute-51|
 dev/14August_2009_Friday_tagesschau-72|
 dev/26January_2010_Tuesday_heute-107|
 dev/12February_2010_Friday_tagesschau-125|
@@ -32,7 +32,7 @@ dev/30January_2013_Wednesday_tagesschau-477|
 dev/14October_2009_Wednesday_tagesschau-529|
 dev/20November_2011_Sunday_tagesschau-536|
 dev/25February_2011_Friday_tagesschau-575|
-dev/18October_2010_Monday_heute-629|NUR
+dev/18October_2010_Monday_heute-629|
 dev/18October_2010_Monday_heute-630|
 dev/06October_2010_Wednesday_tagesschau-632|
 dev/06October_2010_Wednesday_tagesschau-640|
@@ -49,7 +49,7 @@ dev/28September_2012_Friday_tagesschau-917|
 dev/28September_2012_Friday_tagesschau-922|
 dev/03February_2011_Thursday_tagesschau-938|
 dev/03February_2011_Thursday_tagesschau-939|
-dev/04April_2011_Monday_heute-965|MEHR
+dev/04April_2011_Monday_heute-965|
 dev/04April_2011_Monday_heute-966|
 dev/23November_2011_Wednesday_tagesschau-973|
 dev/23November_2011_Wednesday_tagesschau-980|
@@ -96,7 +96,7 @@ dev/07April_2010_Wednesday_heute-1632|
 dev/03July_2011_Sunday_tagesschau-1673|
 dev/03July_2011_Sunday_tagesschau-1674|
 dev/13April_2011_Wednesday_tagesschau-1683|
-dev/12January_2011_Wednesday_tagesschau-1732|HEUTE
+dev/12January_2011_Wednesday_tagesschau-1732|
 dev/09March_2011_Wednesday_heute-1742|
 dev/20November_2010_Saturday_tagesschau-1823|
 dev/20November_2010_Saturday_tagesschau-1824|
@@ -141,10 +141,10 @@ dev/07January_2010_Thursday_tagesschau-2302|
 dev/07June_2010_Monday_heute-2322|
 dev/07June_2010_Monday_heute-2327|
 dev/26September_2009_Saturday_tagesschau-2333|
-dev/26September_2009_Saturday_tagesschau-2335|NUR
-dev/26September_2009_Saturday_tagesschau-2342|HEUTE
+dev/26September_2009_Saturday_tagesschau-2335|
+dev/26September_2009_Saturday_tagesschau-2342|
 dev/26September_2009_Saturday_tagesschau-2343|
-dev/12March_2011_Saturday_tagesschau-2455|NUR
+dev/12March_2011_Saturday_tagesschau-2455|
 dev/15September_2010_Wednesday_heute-2476|
 dev/10February_2010_Wednesday_tagesschau-2524|
 dev/25November_2010_Thursday_tagesschau-2529|
@@ -165,7 +165,7 @@ dev/31January_2013_Thursday_tagesschau-2710|
 dev/02November_2010_Tuesday_heute-2742|
 dev/02November_2010_Tuesday_heute-2754|
 dev/01July_2011_Friday_tagesschau-2763|
-dev/01July_2011_Friday_tagesschau-2765|HEUTE
+dev/01July_2011_Friday_tagesschau-2765|
 dev/01July_2011_Friday_tagesschau-2766|
 dev/03August_2010_Tuesday_tagesschau-2776|
 dev/26January_2010_Tuesday_tagesschau-2787|
@@ -182,8 +182,8 @@ dev/09August_2010_Monday_tagesschau-3004|
 dev/07October_2012_Sunday_tagesschau-3026|
 dev/01December_2011_Thursday_heute-3058|
 dev/01December_2011_Thursday_heute-3060|
-dev/01December_2011_Thursday_heute-3061|BIS
-dev/20April_2011_Wednesday_tagesschau-3084|BISSCHEN
+dev/01December_2011_Thursday_heute-3061|
+dev/20April_2011_Wednesday_tagesschau-3084|
 dev/21April_2010_Wednesday_heute-3122|
 dev/21April_2010_Wednesday_heute-3124|
 dev/05September_2010_Sunday_tagesschau-3132|
@@ -208,7 +208,7 @@ dev/02September_2010_Thursday_heute-3457|
 dev/25September_2010_Saturday_tagesschau-3480|
 dev/02October_2012_Tuesday_heute-3494|
 dev/11December_2009_Friday_tagesschau-3509|
-dev/06January_2010_Wednesday_heute-3523|HEUTE
+dev/06January_2010_Wednesday_heute-3523|
 dev/06January_2010_Wednesday_heute-3525|
 dev/06January_2010_Wednesday_heute-3530|
 dev/05April_2010_Monday_tagesschau-3546|
@@ -225,7 +225,7 @@ dev/24January_2011_Monday_tagesschau-3712|
 dev/24January_2011_Monday_tagesschau-3720|
 dev/23February_2011_Wednesday_heute-3780|
 dev/10August_2010_Tuesday_tagesschau-3865|
-dev/25June_2010_Friday_tagesschau-3884|NUR
+dev/25June_2010_Friday_tagesschau-3884|
 dev/25June_2010_Friday_tagesschau-3887|
 dev/12September_2010_Sunday_tagesschau-3919|
 dev/08April_2010_Thursday_tagesschau-3949|
@@ -265,7 +265,7 @@ dev/09February_2010_Tuesday_tagesschau-4497|
 dev/01July_2009_Wednesday_tagesschau-4555|
 dev/11October_2010_Monday_tagesschau-4607|
 dev/11October_2010_Monday_tagesschau-4612|
-dev/11October_2010_Monday_tagesschau-4615|BISSCHEN
+dev/11October_2010_Monday_tagesschau-4615|
 dev/30November_2010_Tuesday_tagesschau-4617|
 dev/30November_2010_Tuesday_tagesschau-4618|
 dev/30November_2010_Tuesday_tagesschau-4620|
@@ -313,7 +313,7 @@ dev/21November_2011_Monday_heute-5433|
 dev/21November_2011_Monday_heute-5434|
 dev/22November_2009_Sunday_tagesschau-5490|
 dev/23July_2011_Saturday_tagesschau-5498|
-dev/08June_2010_Tuesday_tagesschau-5527|HEUTE
+dev/08June_2010_Tuesday_tagesschau-5527|
 dev/06October_2011_Thursday_heute-5532|
 dev/17January_2010_Sunday_tagesschau-5554|
 dev/17January_2010_Sunday_tagesschau-5555|
@@ -338,7 +338,7 @@ dev/12December_2011_Monday_heute-5806|
 dev/26November_2011_Saturday_tagesschau-5848|
 dev/09August_2010_Monday_heute-5905|
 dev/09August_2010_Monday_heute-5906|
-dev/16December_2009_Wednesday_tagesschau-5918|MEHR
+dev/16December_2009_Wednesday_tagesschau-5918|
 dev/04October_2010_Monday_heute-5945|
 dev/04October_2010_Monday_heute-5954|
 dev/25August_2010_Wednesday_heute-6001|
@@ -352,8 +352,8 @@ dev/16February_2010_Tuesday_tagesschau-6098|
 dev/27October_2009_Tuesday_tagesschau-6148|
 dev/26July_2010_Monday_tagesschau-6256|
 dev/16September_2010_Thursday_tagesschau-6271|
-dev/16September_2010_Thursday_tagesschau-6272|HEUTE
-dev/16September_2010_Thursday_tagesschau-6276|HEUTE
+dev/16September_2010_Thursday_tagesschau-6272|
+dev/16September_2010_Thursday_tagesschau-6276|
 dev/30November_2011_Wednesday_tagesschau-6289|
 dev/30November_2011_Wednesday_tagesschau-6291|
 dev/30November_2011_Wednesday_tagesschau-6292|
@@ -362,7 +362,7 @@ dev/10August_2011_Wednesday_tagesschau-6304|
 dev/10August_2011_Wednesday_tagesschau-6305|
 dev/17February_2011_Thursday_tagesschau-6307|
 dev/24January_2013_Thursday_tagesschau-6323|
-dev/24January_2013_Thursday_tagesschau-6327|HEUTE
+dev/24January_2013_Thursday_tagesschau-6327|
 dev/30January_2011_Sunday_tagesschau-6345|
 dev/10January_2011_Monday_tagesschau-6404|
 dev/10January_2011_Monday_tagesschau-6409|
@@ -373,7 +373,7 @@ dev/04July_2011_Monday_heute-6441|
 dev/23May_2011_Monday_heute-6459|
 dev/23May_2011_Monday_heute-6461|
 dev/23May_2011_Monday_heute-6466|
-dev/23September_2010_Thursday_heute-6476|BIS
+dev/23September_2010_Thursday_heute-6476|
 dev/29January_2010_Friday_tagesschau-6489|
 dev/29January_2010_Friday_tagesschau-6490|
 dev/03November_2010_Wednesday_tagesschau-6505|
@@ -400,7 +400,7 @@ dev/06December_2011_Tuesday_tagesschau-6842|
 dev/06July_2011_Wednesday_tagesschau-6870|
 dev/10August_2009_Monday_heute-6891|
 dev/10August_2009_Monday_heute-6892|
-dev/06February_2011_Sunday_tagesschau-6914|HEUTE
+dev/06February_2011_Sunday_tagesschau-6914|
 dev/06February_2011_Sunday_tagesschau-6917|
 dev/24January_2011_Monday_heute-6980|
 dev/24January_2011_Monday_heute-6983|
@@ -420,7 +420,7 @@ dev/09July_2009_Thursday_tagesschau-7122|
 dev/30March_2011_Wednesday_tagesschau-7127|
 dev/30March_2011_Wednesday_tagesschau-7130|
 dev/31October_2009_Saturday_tagesschau-7147|
-dev/02June_2010_Wednesday_tagesschau-7160|HEUTE BIS
+dev/02June_2010_Wednesday_tagesschau-7160|
 dev/01May_2010_Saturday_tagesschau-7197|
 dev/04July_2010_Sunday_tagesschau-7198|
 dev/04July_2010_Sunday_tagesschau-7199|
@@ -499,11 +499,11 @@ dev/20October_2010_Wednesday_heute-8494|
 dev/20October_2010_Wednesday_heute-8501|
 dev/28July_2011_Thursday_tagesschau-8521|
 dev/29September_2009_Tuesday_tagesschau-8538|
-dev/09May_2011_Monday_tagesschau-8583|BIS
+dev/09May_2011_Monday_tagesschau-8583|
 dev/09May_2011_Monday_tagesschau-8585|
 dev/09May_2011_Monday_tagesschau-8586|
 dev/30July_2011_Saturday_tagesschau-8591|
-dev/13November_2009_Friday_tagesschau-8610|HEUTE
+dev/13November_2009_Friday_tagesschau-8610|
 dev/29April_2010_Thursday_heute-8622|
 dev/29April_2010_Thursday_heute-8623|
 dev/29April_2010_Thursday_heute-8625|
@@ -516,4 +516,4 @@ dev/06October_2012_Saturday_tagesschau-8729|
 dev/06October_2012_Saturday_tagesschau-8730|
 dev/06October_2012_Saturday_tagesschau-8744|
 dev/23March_2011_Wednesday_tagesschau-8751|
-dev/27January_2013_Sunday_tagesschau-8836|HEUTE
+dev/27January_2013_Sunday_tagesschau-8836|
