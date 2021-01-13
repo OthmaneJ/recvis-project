@@ -9,10 +9,10 @@ import os
 import shutil
 import time
 import queue
-# import sys
-# sys.path.append('//content//drive//MyDrive///MVA//reconaissance objet//projet//recvis-project//slt')
+import sys
+sys.path.append('//content//drive//MyDrive///MVA//reconaissance objet//projet//recvis-project//slt')
 
-from signjoey.model import build_model
+from signjoey.model import build_model, build_model_multi_channel
 from signjoey.batch import Batch
 from signjoey.helpers import (
     log_data_info,
@@ -67,6 +67,8 @@ class TrainManager:
             if isinstance(config["data"]["feature_size"], list)
             else config["data"]["feature_size"]
         )
+        self.face_dope_dim = config['data']['face_dope_feature_size']
+        self.body_dope_dim = config['data']['body_dope_feature_size']
         self.dataset_version = config["data"].get("version", "phoenix_2014_trans")
 
         # model
@@ -381,6 +383,8 @@ class TrainManager:
                     torch_batch=batch,
                     txt_pad_index=self.txt_pad_index,
                     sgn_dim=self.feature_size,
+                    face_dope_dim=self.face_dope_dim,
+                    body_dope_dim=self.body_dope_dim,
                     use_cuda=self.use_cuda,
                     frame_subsampling_ratio=self.frame_subsampling_ratio,
                     random_frame_subsampling=self.random_frame_subsampling,
@@ -468,6 +472,8 @@ class TrainManager:
                         batch_type=self.eval_batch_type,
                         dataset_version=self.dataset_version,
                         sgn_dim=self.feature_size,
+                        face_dope_dim=self.face_dope_dim,
+                        body_dope_dim=self.body_dope_dim,
                         txt_pad_index=self.txt_pad_index,
                         # Recognition Parameters
                         do_recognition=self.do_recognition,
@@ -981,7 +987,20 @@ def train(cfg_file: str) -> None:
     # build model and load parameters into it
     do_recognition = cfg["training"].get("recognition_loss_weight", 1.0) > 0.0
     do_translation = cfg["training"].get("translation_loss_weight", 1.0) > 0.0
-    model = build_model(
+    
+    """model = build_model(
+        cfg=cfg["model"],
+        gls_vocab=gls_vocab,
+        txt_vocab=txt_vocab,
+        sgn_dim=sum(cfg["data"]["feature_size"])
+        if isinstance(cfg["data"]["feature_size"], list)
+        else cfg["data"]["feature_size"],
+        body_dope_dim = cfg['data']['body_dope_feature_size'],
+        face_dope_dim = cfg['data']['face_dope_feature_size'],
+        do_recognition=do_recognition,
+        do_translation=do_translation,
+    )"""
+    model = build_model_multi_channel(
         cfg=cfg["model"],
         gls_vocab=gls_vocab,
         txt_vocab=txt_vocab,

@@ -15,6 +15,8 @@ class Batch:
         torch_batch,
         txt_pad_index,
         sgn_dim,
+        face_dope_dim,
+        body_dope_dim,
         is_train: bool = False,
         use_cuda: bool = False,
         frame_subsampling_ratio: int = None,
@@ -78,6 +80,8 @@ class Batch:
 
         self.sgn_dim = sgn_dim
         self.sgn_mask = (self.sgn != torch.zeros(sgn_dim))[..., 0].unsqueeze(1)
+        self.sgn_face_mask = (self.sgn_face_dope != torch.zeros(face_dope_dim))[..., 0].unsqueeze(1)
+        self.sgn_body_mask = (self.sgn_body_dope != torch.zeros(body_dope_dim))[..., 0].unsqueeze(1)
 
         # Text
         self.txt = None

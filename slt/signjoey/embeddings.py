@@ -179,6 +179,7 @@ class SpatialEmbeddings(nn.Module):
         activation_type: str = None,
         scale: bool = False,
         scale_factor: float = None,
+        multichannel: bool = False,
         **kwargs
     ):
         """
@@ -199,6 +200,7 @@ class SpatialEmbeddings(nn.Module):
         self.ln_face_dope = nn.Linear(self.input_size_face_dope, self.embedding_dim)
         self.ln_body_dope = nn.Linear(self.input_size_body_dope, self.embedding_dim)
         self.ln_fusion = nn.Linear(3*self.embedding_dim, self.embedding_dim)
+        self.multichannel = True
 
         self.norm_type = norm_type
         if self.norm_type:
@@ -231,19 +233,36 @@ class SpatialEmbeddings(nn.Module):
         x1 = self.ln(x1)
         x2 = self.ln_face_dope(x2)
         x3 = self.ln_body_dope(x3)
-        x = torch.cat((x1, x2, x3), dim=2)
-        x = self.ln_fusion(x)
+        if not self.multichannel:
+          x = torch.cat((x1, x2, x3), dim=2)
+          x = self.ln_fusion(x)
         
         if self.norm_type:
-            x = self.norm(x, mask)
+            if not self.multichannel:
+              x = self.norm(x, mask)
+            else:
+              x1 = self.norm(x1, mask)
+              x2 = self.norm(x2, mask)
+              x3 = self.norm(x3, mask)
 
         if self.activation_type:
-            x = self.activation(x)
+            if not self.multichannel:
+              x = self.activation(x)
+            else:
+              x1 = self.activation(x1)
+              x2 = self.activation(x2)
+              x3 = self.activation(x3)
 
         if self.scale:
-            return x * self.scale_factor
+            if not self.multichannel:
+              return x * self.scale_factor
+            else:
+              return x1*self.scale_factor, x2*self.scale_factor, x3*self.scale_factor
         else:
-            return x
+            if not self.multichannel:
+              return x
+            else:
+              return x1, x2, x3
 
     def __repr__(self):
         return "%s(embedding_dim=%d, input_size=%d)" % (

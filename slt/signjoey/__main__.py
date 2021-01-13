@@ -17,7 +17,7 @@ def main():
 
     ap.add_argument("config_path", type=str, help="path to YAML config file")
 
-    ap.add_argument("--ckpt", type=str, help="checkpoint for prediction")
+    ap.add_argument("--ckpt", type=str, default=None, help="checkpoint for prediction")
 
     ap.add_argument(
         "--output_path", type=str, help="path for saving translation output"

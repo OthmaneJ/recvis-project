@@ -6,7 +6,7 @@ from torch import Tensor
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
 from signjoey.helpers import freeze_params
-from signjoey.transformer_layers import TransformerEncoderLayer, PositionalEncoding
+from signjoey.transformer_layers import TransformerEncoderLayer, PositionalEncoding, MultiHeadedAttention, TransformerMultiChannelEncoderLayer
 
 
 # pylint: disable=abstract-method
@@ -238,6 +238,107 @@ class TransformerEncoder(Encoder):
         for layer in self.layers:
             x = layer(x, mask)
         return self.layer_norm(x), None
+
+    def __repr__(self):
+        return "%s(num_layers=%r, num_heads=%r)" % (
+            self.__class__.__name__,
+            len(self.layers),
+            self.layers[0].src_src_att.num_heads,
+        )
+
+class TransformerEncoderMultiChannel(Encoder):
+    """
+    Transformer Encoder
+    """
+
+    # pylint: disable=unused-argument
+    def __init__(
+        self,
+        hidden_size: int = 512,
+        ff_size: int = 2048,
+        num_layers: int = 8,
+        num_heads: int = 4,
+        dropout: float = 0.1,
+        emb_dropout: float = 0.1,
+        freeze: bool = False,
+        **kwargs
+    ):
+        """
+        Initializes the Transformer.
+        :param hidden_size: hidden size and size of embeddings
+        :param ff_size: position-wise feed-forward layer size.
+          (Typically this is 2*hidden_size.)
+        :param num_layers: number of layers
+        :param num_heads: number of heads for multi-headed attention
+        :param dropout: dropout probability for Transformer layers
+        :param emb_dropout: Is applied to the input (word embeddings).
+        :param freeze: freeze the parameters of the encoder during training
+        :param kwargs:
+        """
+        super(TransformerEncoderMultiChannel, self).__init__()
+
+        # build all (num_layers) layers
+        self.layers = nn.ModuleList(
+            [
+                TransformerMultiChannelEncoderLayer(
+                    size=hidden_size,
+                    ff_size=ff_size,
+                    num_heads=num_heads,
+                    dropout=dropout,
+                )
+                for _ in range(num_layers)
+            ]
+        )
+
+        self.layer_norm = nn.LayerNorm(hidden_size, eps=1e-6)
+        self.self_attention_layer = MultiHeadedAttention(num_heads=1, size=hidden_size)
+        self.pe = PositionalEncoding(hidden_size)
+        self.emb_dropout = nn.Dropout(p=emb_dropout)
+
+        self._output_size = hidden_size
+
+        if freeze:
+            freeze_params(self)
+
+    # pylint: disable=arguments-differ
+    def forward(
+        self, embed_src: Tensor, embed_src2: Tensor, embed_src3: Tensor,
+        src_length: Tensor, mask: Tensor, face_mask: Tensor, body_mask: Tensor
+    ) -> (Tensor, Tensor):
+        """
+        Pass the input (and mask) through each layer in turn.
+        Applies a Transformer encoder to sequence of embeddings x.
+        The input mini-batch x needs to be sorted by src length.
+        x and mask should have the same dimensions [batch, time, dim].
+
+        :param embed_src: embedded src inputs,
+            shape (batch_size, src_len, embed_size)
+        :param src_length: length of src inputs
+            (counting tokens before padding), shape (batch_size)
+        :param mask: indicates padding areas (zeros where padding), shape
+            (batch_size, src_len, embed_size)
+        :return:
+            - output: hidden states with
+                shape (batch_size, max_length, directions*hidden),
+            - hidden_concat: last hidden state with
+                shape (batch_size, directions*hidden)
+        """
+        x1 = self.pe(embed_src)  # add position encoding to word embeddings
+        x1 = self.emb_dropout(x1)
+
+        x2 = self.pe(embed_src2)  # add position encoding to word embeddings
+        x2 = self.emb_dropout(x2)
+
+        x3 = self.pe(embed_src3)  # add position encoding to word embeddings
+        x3 = self.emb_dropout(x3)
+        
+        x1 = self.self_attention_layer(x1, x1, x1)
+        x2 = self.self_attention_layer(x2, x2, x2)
+        x3 = self.self_attention_layer(x3, x3, x3)
+
+        for layer in self.layers:
+            x1, x2, x3 = layer(x1, x2, x3, mask, face_mask=face_mask, body_mask=body_mask)
+        return self.layer_norm(x1), self.layer_norm(x2), self.layer_norm(x3), None
 
     def __repr__(self):
         return "%s(num_layers=%r, num_heads=%r)" % (

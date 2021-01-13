@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from torch import Tensor
 import numpy as np
 
-from signjoey.decoders import Decoder, TransformerDecoder
+from signjoey.decoders import Decoder, TransformerDecoder, TransformerDecoderMultiChannel
 from signjoey.embeddings import Embeddings
 from signjoey.helpers import tile
 
@@ -38,7 +38,7 @@ def greedy(
     :return:
     """
 
-    if isinstance(decoder, TransformerDecoder):
+    if isinstance(decoder, TransformerDecoder) or isinstance(decoder, TransformerDecoderMultiChannel):
         # Transformer greedy decoding
         greedy_fun = transformer_greedy
     else:
@@ -156,8 +156,8 @@ def transformer_greedy(
     batch_size = src_mask.size(0)
 
     # start with BOS-symbol for each sentence in the batch
-    ys = encoder_output.new_full([batch_size, 1], bos_index, dtype=torch.long)
-
+    ys = encoder_output[0].new_full([batch_size, 1], bos_index, dtype=torch.long)
+    
     # a subsequent mask is intersected with this in decoder forward pass
     trg_mask = src_mask.new_ones([1, 1, 1])
     finished = src_mask.new_zeros((batch_size)).byte()
@@ -235,7 +235,7 @@ def beam_search(
     assert n_best <= size, "Can only return {} best hypotheses.".format(size)
 
     # init
-    transformer = isinstance(decoder, TransformerDecoder)
+    transformer = isinstance(decoder, TransformerDecoder) or isinstance(decoder, TransformerDecoderMultiChannel)
     batch_size = src_mask.size(0)
     att_vectors = None  # not used for Transformer
 
@@ -250,9 +250,10 @@ def beam_search(
     if hidden is not None:
         hidden = tile(hidden, size, dim=1)  # layers x batch*k x dec_hidden_size
 
-    encoder_output = tile(
-        encoder_output.contiguous(), size, dim=0
-    )  # batch*k x src_len x enc_hidden_size
+    for i in range (len(encoder_output)):
+      encoder_output[i] = tile(
+          encoder_output[i].contiguous(), size, dim=0
+      )  # batch*k x src_len x enc_hidden_size
     src_mask = tile(src_mask, size, dim=0)  # batch*k x 1 x src_len
 
     # Transformer only: create target mask
@@ -263,13 +264,13 @@ def beam_search(
 
     # numbering elements in the batch
     batch_offset = torch.arange(
-        batch_size, dtype=torch.long, device=encoder_output.device
+        batch_size, dtype=torch.long, device=encoder_output[0].device
     )
 
     # numbering elements in the extended batch, i.e. beam size copies of each
     # batch element
     beam_offset = torch.arange(
-        0, batch_size * size, step=size, dtype=torch.long, device=encoder_output.device
+        0, batch_size * size, step=size, dtype=torch.long, device=encoder_output[0].device
     )
 
     # keeps track of the top beam size hypotheses to expand for each element
@@ -278,11 +279,11 @@ def beam_search(
         [batch_size * size, 1],
         bos_index,
         dtype=torch.long,
-        device=encoder_output.device,
+        device=encoder_output[0].device,
     )
 
     # Give full probability to the first beam on the first step.
-    topk_log_probs = torch.zeros(batch_size, size, device=encoder_output.device)
+    topk_log_probs = torch.zeros(batch_size, size, device=encoder_output[0].device)
     topk_log_probs[:, 1:] = float("-inf")
 
     # Structure that holds finished hypotheses.

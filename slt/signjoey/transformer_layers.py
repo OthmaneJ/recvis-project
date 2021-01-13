@@ -89,7 +89,6 @@ class MultiHeadedAttention(nn.Module):
 
         return output
 
-
 # pylint: disable=arguments-differ
 class PositionwiseFeedForward(nn.Module):
     """
@@ -274,3 +273,65 @@ class TransformerDecoderLayer(nn.Module):
         o = self.feed_forward(self.dropout(h2) + h1)
 
         return o
+
+
+class TransformerMultiChannelEncoderLayer(nn.Module):
+    """
+    One Transformer encoder layer has a Multi-head attention layer plus
+    a position-wise feed-forward layer.
+    """
+
+    def __init__(
+        self, size: int = 0, ff_size: int = 0, num_heads: int = 0, dropout: float = 0.1
+    ):
+        """
+        A single Transformer layer.
+        :param size:
+        :param ff_size:
+        :param num_heads:
+        :param dropout:
+        """
+        super(TransformerMultiChannelEncoderLayer, self).__init__()
+
+        self.layer_norm = nn.LayerNorm(size, eps=1e-6)
+        self.src_src_att = MultiHeadedAttention(num_heads, size, dropout=dropout)
+        self.feed_forward = PositionwiseFeedForward(
+            input_size=size, ff_size=ff_size, dropout=dropout
+        )
+        self.dropout = nn.Dropout(dropout)
+        self.size = size
+
+    # pylint: disable=arguments-differ
+    def forward(self, x: Tensor, x2: Tensor, x3: Tensor, mask: Tensor, face_mask: Tensor, body_mask: Tensor) -> Tensor:
+        """
+        Forward pass for a single transformer encoder layer.
+        First applies layer norm, then self attention,
+        then dropout with residual connection (adding the input to the result),
+        and then a position-wise feed-forward layer.
+
+        :param x: layer input
+        :param mask: input mask
+        :return: output tensor
+        """
+        x1_norm = self.layer_norm(x)
+        x2_norm = self.layer_norm(x2)
+        x3_norm = self.layer_norm(x3)
+
+        K1 = torch.cat([x2_norm, x3_norm], dim=1)
+        K2 = torch.cat([x1_norm, x3_norm], dim=1)
+        K3 = torch.cat([x1_norm, x2_norm], dim=1)
+
+
+        h1 = self.src_src_att(K1, K1, x1_norm) # K V Q
+        h2 = self.src_src_att(K2, K2, x2_norm) # K V Q
+        h3 = self.src_src_att(K3, K3, x3_norm) # K V Q
+
+        h1 = self.dropout(h1) + x
+        h2 = self.dropout(h2) + x2
+        h3 = self.dropout(h3) + x3
+
+        o1 = self.feed_forward(h1)
+        o2 = self.feed_forward(h2)
+        o3 = self.feed_forward(h3)
+
+        return o1, o2, o3
