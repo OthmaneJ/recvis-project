@@ -1,6 +1,6 @@
 name: sign_experiment
 data:
-    data_path: /content/drive/MyDrive/slt_data/from_omar
+    data_path: /content/drive/MyDrive/from_omar
     version: phoenix_2014_trans
     sgn: sign
     txt: text
@@ -55,7 +55,7 @@ training:
     reset_scheduler: false
     reset_optimizer: false
     random_seed: 42
-    model_dir: "/content/drive/MyDrive/sign-language-translation/slt/sign_sample_model"
+    model_dir: "/content/drive/MyDrive/recvis-project/slt/sign_sample_model"
     recognition_loss_weight: 1.0
     translation_loss_weight: 1.0
     eval_metric: bleu
