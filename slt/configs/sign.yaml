@@ -61,7 +61,8 @@ training:
     eval_metric: bleu
     optimizer: adam
     learning_rate: 0.001
-    batch_size: 32
+    # batch_size: 32
+    batch_size: 15
     num_valid_log: 5
     epochs: 5000000
     early_stopping_metric: eval_metric
@@ -120,3 +121,4 @@ model:
         hidden_size: 512
         ff_size: 2048
         dropout: 0.1
+fusion: late

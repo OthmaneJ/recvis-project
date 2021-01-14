@@ -212,7 +212,7 @@ class TransformerEncoder(Encoder):
 
     # pylint: disable=arguments-differ
     def forward(
-        self, embed_src: Tensor, src_length: Tensor, mask: Tensor
+        self, embed_src: Tensor, src_length: Tensor, mask: Tensor, fusion: str = 'early'
     ) -> (Tensor, Tensor):
         """
         Pass the input (and mask) through each layer in turn.
@@ -232,13 +232,23 @@ class TransformerEncoder(Encoder):
             - hidden_concat: last hidden state with
                 shape (batch_size, directions*hidden)
         """
-        x = self.pe(embed_src)  # add position encoding to word embeddings
-        x = self.emb_dropout(x)
+        if fusion == 'early':
+          x = self.pe(embed_src)  # add position encoding to word embeddings
+          x = self.emb_dropout(x)
 
-        for layer in self.layers:
-            x = layer(x, mask)
-        return self.layer_norm(x), None
+          for layer in self.layers:
+              x = layer(x, mask)
+          return self.layer_norm(x), None
+        elif fusion == 'late':
+          x1 = self.pe(embed_src[0])
+          x2 = self.pe(embed_src[1])
+          x3 = self.pe(embed_src[2])
 
+          for layer in self.layers:
+              x1 = layer(x1, mask)
+              x2 = layer(x2, mask)
+              x3 = layer(x3, mask)
+          return self.layer_norm(x1), self.layer_norm(x2), self.layer_norm(x3), None
     def __repr__(self):
         return "%s(num_layers=%r, num_heads=%r)" % (
             self.__class__.__name__,

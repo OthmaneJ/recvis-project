@@ -512,6 +512,7 @@ class TransformerDecoder(Decoder):
 
         self.emb_dropout = nn.Dropout(p=emb_dropout)
         self.output_layer = nn.Linear(hidden_size, vocab_size, bias=False)
+        self.output_layer_late_fusion = nn.Linear(3*hidden_size, vocab_size, bias=False)
 
         if freeze:
             freeze_params(self)
@@ -525,6 +526,7 @@ class TransformerDecoder(Decoder):
         unroll_steps: int = None,
         hidden: Tensor = None,
         trg_mask: Tensor = None,
+        fusion: str = 'early',
         **kwargs
     ):
         """
@@ -542,19 +544,31 @@ class TransformerDecoder(Decoder):
         :return:
         """
         assert trg_mask is not None, "trg_mask required for Transformer"
-
         x = self.pe(trg_embed)  # add position encoding to word embedding
         x = self.emb_dropout(x)
 
         trg_mask = trg_mask & subsequent_mask(trg_embed.size(1)).type_as(trg_mask)
 
-        for layer in self.layers:
-            x = layer(x=x, memory=encoder_output, src_mask=src_mask, trg_mask=trg_mask)
+        if fusion == 'early':
+          for layer in self.layers:
+              x = layer(x=x, memory=encoder_output, src_mask=src_mask, trg_mask=trg_mask)
 
-        x = self.layer_norm(x)
-        output = self.output_layer(x)
+          x = self.layer_norm(x)
+          output = self.output_layer(x)
 
-        return output, x, None, None
+          return output, x, None, None
+        elif fusion == 'late':
+          for layer in self.layers:
+              x1 = layer(x=x, memory=encoder_output[0], src_mask=src_mask, trg_mask=trg_mask)
+              x2 = layer(x=x, memory=encoder_output[1], src_mask=src_mask, trg_mask=trg_mask)
+              x3 = layer(x=x, memory=encoder_output[2], src_mask=src_mask, trg_mask=trg_mask)
+          
+          x = torch.cat([x1, x2, x3], dim=1)
+          x = self.layer_norm(x)
+
+          output = self.output_layer_late_fusion(x)
+
+          return output, x, None, None
 
     def __repr__(self):
         return "%s(num_layers=%r, num_heads=%r)" % (

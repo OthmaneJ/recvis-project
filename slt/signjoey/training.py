@@ -963,7 +963,7 @@ class TrainManager:
                 opened_file.write("{}|{}\n".format(seq, hyp))
 
 
-def train(cfg_file: str) -> None:
+def train(cfg_file: str, fusion: str='early') -> None:
     """
     Main training function. After training, also test on test data if given.
 
@@ -992,6 +992,7 @@ def train(cfg_file: str) -> None:
         face_dope_dim = cfg['data']['face_dope_feature_size'],
         do_recognition=do_recognition,
         do_translation=do_translation,
+        fusion=fusion
     )
 
     # for training management, e.g. early stopping and model selection
@@ -1044,8 +1045,14 @@ if __name__ == "__main__":
         help="Training configuration file (yaml).",
     )
     parser.add_argument(
+        "fusion",
+        default="early",
+        type=str,
+        help="Fusion strategy",
+    )
+    parser.add_argument(
         "--gpu_id", type=str, default="0", help="gpu to run your job on"
     )
     args = parser.parse_args()
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu_id
-    train(cfg_file=args.config)
+    train(cfg_file=args.config, fusion=args.fusion)

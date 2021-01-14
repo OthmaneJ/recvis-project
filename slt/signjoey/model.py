@@ -37,6 +37,7 @@ class SignModel(nn.Module):
         self,
         encoder: Encoder,
         gloss_output_layer: nn.Module,
+        gloss_output_layer_late: nn.Module,
         decoder: Decoder,
         sgn_embed: SpatialEmbeddings,
         txt_embed: Embeddings,
@@ -44,6 +45,7 @@ class SignModel(nn.Module):
         txt_vocab: TextVocabulary,
         do_recognition: bool = True,
         do_translation: bool = True,
+        fusion: str = 'early',
     ):
         """
         Create a new encoder-decoder model
@@ -73,8 +75,11 @@ class SignModel(nn.Module):
         self.txt_eos_index = self.txt_vocab.stoi[EOS_TOKEN]
 
         self.gloss_output_layer = gloss_output_layer
+        self.gloss_output_layer_late = gloss_output_layer_late
         self.do_recognition = do_recognition
         self.do_translation = do_translation
+
+        self.fusion = fusion
 
     # pylint: disable=arguments-differ
     def forward(
@@ -98,16 +103,36 @@ class SignModel(nn.Module):
         :param txt_mask: target mask
         :return: decoder outputs
         """
-        encoder_output, encoder_hidden = self.encode(
-            sgn=sgn, sgn_mask=sgn_mask, sgn_length=sgn_lengths,
-            sgn_face_dope=sgn_face_dope,
-            sgn_body_dope=sgn_body_dope,
-        )
+        if self.fusion == 'early':
+          encoder_output, encoder_hidden = self.encode(
+              sgn=sgn, sgn_mask=sgn_mask, sgn_length=sgn_lengths,
+              sgn_face_dope=sgn_face_dope,
+              sgn_body_dope=sgn_body_dope,
+              fusion=self.fusion
+          )
+        else:
+          encoder_output1, encoder_output2, encoder_output3, encoder_hidden = self.encode(
+              sgn=sgn, sgn_mask=sgn_mask, sgn_length=sgn_lengths,
+              sgn_face_dope=sgn_face_dope,
+              sgn_body_dope=sgn_body_dope,
+              fusion=self.fusion
+          )
+          encoder_output = [encoder_output1, encoder_output2, encoder_output3]
 
-        if self.do_recognition:
+        if self.do_recognition and self.fusion == 'early':
             # Gloss Recognition Part
             # N x T x C
             gloss_scores = self.gloss_output_layer(encoder_output)
+            # N x T x C
+            gloss_probabilities = gloss_scores.log_softmax(2)
+            # Turn it into T x N x C
+            gloss_probabilities = gloss_probabilities.permute(1, 0, 2)
+        
+        elif self.do_recognition and self.fusion == 'late':
+            # Gloss Recognition Part
+            # N x T x C
+            encoder_output_tensor = torch.cat(encoder_output, dim=1)
+            gloss_scores = self.gloss_output_layer_late(encoder_output)
             # N x T x C
             gloss_probabilities = gloss_scores.log_softmax(2)
             # Turn it into T x N x C
@@ -124,6 +149,7 @@ class SignModel(nn.Module):
                 txt_input=txt_input,
                 unroll_steps=unroll_steps,
                 txt_mask=txt_mask,
+                fusion=self.fusion
             )
         else:
             decoder_outputs = None
@@ -132,7 +158,7 @@ class SignModel(nn.Module):
 
     def encode(
         self, sgn: Tensor, sgn_mask: Tensor, sgn_length: Tensor,
-        sgn_face_dope: Tensor, sgn_body_dope: Tensor
+        sgn_face_dope: Tensor, sgn_body_dope: Tensor, fusion: str = 'early',
     ) -> (Tensor, Tensor):
         """
         Encodes the source sentence.
@@ -145,9 +171,10 @@ class SignModel(nn.Module):
         # print(type(sgn_face_dope))
         # print(sgn_face_dope)
         return self.encoder(
-            embed_src=self.sgn_embed(x1=sgn, x2=sgn_face_dope, x3=sgn_body_dope, mask=sgn_mask),
+            embed_src=self.sgn_embed(x1=sgn, x2=sgn_face_dope, x3=sgn_body_dope, mask=sgn_mask, fusion=fusion),
             src_length=sgn_length,
             mask=sgn_mask,
+            fusion=fusion,
         )
 
     def decode(
@@ -158,7 +185,7 @@ class SignModel(nn.Module):
         txt_input: Tensor,
         unroll_steps: int,
         decoder_hidden: Tensor = None,
-        txt_mask: Tensor = None,
+        txt_mask: Tensor = None, fusion: str = 'early',
     ) -> (Tensor, Tensor, Tensor, Tensor):
         """
         Decode, given an encoded source sentence.
@@ -180,6 +207,7 @@ class SignModel(nn.Module):
             trg_mask=txt_mask,
             unroll_steps=unroll_steps,
             hidden=decoder_hidden,
+            fusion=fusion,
         )
 
     def get_loss_for_batch(
@@ -371,6 +399,7 @@ def build_model(
     txt_vocab: TextVocabulary,
     do_recognition: bool = True,
     do_translation: bool = True,
+    fusion: str = 'early',
 ) -> SignModel:
     """
     Build and initialize the model according to the configuration.
@@ -460,6 +489,7 @@ def build_model(
         txt_vocab=txt_vocab,
         do_recognition=do_recognition,
         do_translation=do_translation,
+        fusion=fusion,
     )
 
     if do_translation:

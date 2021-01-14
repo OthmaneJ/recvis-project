@@ -221,29 +221,49 @@ class SpatialEmbeddings(nn.Module):
             freeze_params(self)
 
     # pylint: disable=arguments-differ
-    def forward(self, x1: Tensor, x2: Tensor, x3: Tensor, mask: Tensor) -> Tensor:
+    def forward(self, x1: Tensor, x2: Tensor, x3: Tensor, mask: Tensor, fusion: str = 'early') -> Tensor:
         """
         :param mask: frame masks
         :param x: input frame features
         :return: embedded representation for `x`
         """
+        if fusion == 'early':
+          x1 = self.ln(x1)
+          x2 = self.ln_face_dope(x2)
+          x3 = self.ln_body_dope(x3)
+          x = torch.cat((x1, x2, x3), dim=2)
+          x = self.ln_fusion(x)
+          
+          if self.norm_type:
+              x = self.norm(x, mask)
 
-        x1 = self.ln(x1)
-        x2 = self.ln_face_dope(x2)
-        x3 = self.ln_body_dope(x3)
-        x = torch.cat((x1, x2, x3), dim=2)
-        x = self.ln_fusion(x)
-        
-        if self.norm_type:
-            x = self.norm(x, mask)
+          if self.activation_type:
+              x = self.activation(x)
 
-        if self.activation_type:
-            x = self.activation(x)
-
-        if self.scale:
-            return x * self.scale_factor
+          if self.scale:
+              return x * self.scale_factor
+          else:
+              return x
         else:
-            return x
+          x1 = self.ln(x1)
+          x2 = self.ln_face_dope(x2)
+          x3 = self.ln_body_dope(x3)
+          
+          if self.norm_type:
+              x1 = self.norm(x1, mask)
+              x2 = self.norm(x2, mask)
+              x3 = self.norm(x3, mask)
+
+          if self.activation_type:
+              x1 = self.activation(x1)
+              x2 = self.activation(x2)
+              x3 = self.activation(x3)
+
+          if self.scale:
+              return x1 * self.scale_factor, x2 * self.scale_factor, x3 * self.scale_factor
+          else:
+              return x1, x2, x3
+
 
     def __repr__(self):
         return "%s(embedding_dim=%d, input_size=%d)" % (
