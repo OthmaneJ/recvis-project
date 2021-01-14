@@ -37,7 +37,6 @@ class SignModel(nn.Module):
         self,
         encoder: Encoder,
         gloss_output_layer: nn.Module,
-        gloss_output_layer_late: nn.Module,
         decoder: Decoder,
         sgn_embed: SpatialEmbeddings,
         txt_embed: Embeddings,
@@ -75,7 +74,6 @@ class SignModel(nn.Module):
         self.txt_eos_index = self.txt_vocab.stoi[EOS_TOKEN]
 
         self.gloss_output_layer = gloss_output_layer
-        self.gloss_output_layer_late = gloss_output_layer_late
         self.do_recognition = do_recognition
         self.do_translation = do_translation
 
@@ -132,7 +130,7 @@ class SignModel(nn.Module):
             # Gloss Recognition Part
             # N x T x C
             encoder_output_tensor = torch.cat(encoder_output, dim=1)
-            gloss_scores = self.gloss_output_layer_late(encoder_output)
+            gloss_scores = self.gloss_output_layer(encoder_output)
             # N x T x C
             gloss_probabilities = gloss_scores.log_softmax(2)
             # Turn it into T x N x C
@@ -442,8 +440,12 @@ def build_model(
             emb_dropout=enc_emb_dropout,
         )
 
-    if do_recognition:
+    if do_recognition and fusion == 'early':
         gloss_output_layer = nn.Linear(encoder.output_size, len(gls_vocab))
+        if cfg["encoder"].get("freeze", False):
+            freeze_params(gloss_output_layer)
+    if do_recognition and fusion == 'late':
+        gloss_output_layer = nn.Linear(3*encoder.output_size, len(gls_vocab))
         if cfg["encoder"].get("freeze", False):
             freeze_params(gloss_output_layer)
     else:
