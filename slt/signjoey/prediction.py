@@ -19,7 +19,7 @@ from signjoey.helpers import (
     load_checkpoint,
 )
 from signjoey.metrics import bleu, chrf, rouge, wer_list
-from signjoey.model import build_model, SignModel, build_model_multi_channel
+from signjoey.model import build_model, SignModel
 from signjoey.batch import Batch
 from signjoey.data import load_data, make_data_iter
 from signjoey.vocabulary import PAD_TOKEN, SIL_TOKEN
@@ -333,15 +333,13 @@ def test(
     # build model and load parameters into it
     do_recognition = cfg["training"].get("recognition_loss_weight", 1.0) > 0.0
     do_translation = cfg["training"].get("translation_loss_weight", 1.0) > 0.0
-    model = build_model_multi_channel(
+    model = build_model(
         cfg=cfg["model"],
         gls_vocab=gls_vocab,
         txt_vocab=txt_vocab,
         sgn_dim=sum(cfg["data"]["feature_size"])
         if isinstance(cfg["data"]["feature_size"], list)
         else cfg["data"]["feature_size"],
-        body_dope_dim = cfg['data']['body_dope_feature_size'],
-        face_dope_dim = cfg['data']['face_dope_feature_size'],
         do_recognition=do_recognition,
         do_translation=do_translation,
     )
@@ -407,8 +405,6 @@ def test(
                 sgn_dim=sum(cfg["data"]["feature_size"])
                 if isinstance(cfg["data"]["feature_size"], list)
                 else cfg["data"]["feature_size"],
-                body_dope_dim = cfg['data']['body_dope_feature_size'],
-                face_dope_dim = cfg['data']['face_dope_feature_size'],
                 txt_pad_index=txt_vocab.stoi[PAD_TOKEN],
                 # Recognition Parameters
                 do_recognition=do_recognition,
@@ -471,8 +467,6 @@ def test(
                     sgn_dim=sum(cfg["data"]["feature_size"])
                     if isinstance(cfg["data"]["feature_size"], list)
                     else cfg["data"]["feature_size"],
-                    body_dope_dim = cfg['data']['body_dope_feature_size'],
-                    face_dope_dim = cfg['data']['face_dope_feature_size'],
                     batch_type=batch_type,
                     dataset_version=dataset_version,
                     do_recognition=do_recognition,
@@ -577,8 +571,6 @@ def test(
         sgn_dim=sum(cfg["data"]["feature_size"])
         if isinstance(cfg["data"]["feature_size"], list)
         else cfg["data"]["feature_size"],
-        body_dope_dim = cfg['data']['body_dope_feature_size'],
-        face_dope_dim = cfg['data']['face_dope_feature_size'],
         txt_pad_index=txt_vocab.stoi[PAD_TOKEN],
         do_recognition=do_recognition,
         recognition_loss_function=recognition_loss_function if do_recognition else None,

@@ -676,7 +676,7 @@ class SignModelMultiChannel(nn.Module):
                 stacked_txt_output, stacked_attention_scores = beam_search(
                     size=translation_beam_size,
                     encoder_hidden=encoder_hidden,
-                    encoder_output=[encoder_output1, encoder_output2, encoder_output3],
+                    encoder_output=encoder_output,
                     src_mask=batch.sgn_mask,
                     embed=self.txt_embed,
                     max_output_length=translation_max_output_length,

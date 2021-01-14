@@ -235,7 +235,7 @@ def beam_search(
     assert n_best <= size, "Can only return {} best hypotheses.".format(size)
 
     # init
-    transformer = isinstance(decoder, TransformerDecoder) or isinstance(decoder, TransformerDecoderMultiChannel)
+    transformer = isinstance(decoder, TransformerDecoder)
     batch_size = src_mask.size(0)
     att_vectors = None  # not used for Transformer
 
@@ -250,10 +250,9 @@ def beam_search(
     if hidden is not None:
         hidden = tile(hidden, size, dim=1)  # layers x batch*k x dec_hidden_size
 
-    for i in range (len(encoder_output)):
-      encoder_output[i] = tile(
-          encoder_output[i].contiguous(), size, dim=0
-      )  # batch*k x src_len x enc_hidden_size
+    encoder_output = tile(
+        encoder_output.contiguous(), size, dim=0
+    )  # batch*k x src_len x enc_hidden_size
     src_mask = tile(src_mask, size, dim=0)  # batch*k x 1 x src_len
 
     # Transformer only: create target mask
@@ -264,13 +263,13 @@ def beam_search(
 
     # numbering elements in the batch
     batch_offset = torch.arange(
-        batch_size, dtype=torch.long, device=encoder_output[0].device
+        batch_size, dtype=torch.long, device=encoder_output.device
     )
 
     # numbering elements in the extended batch, i.e. beam size copies of each
     # batch element
     beam_offset = torch.arange(
-        0, batch_size * size, step=size, dtype=torch.long, device=encoder_output[0].device
+        0, batch_size * size, step=size, dtype=torch.long, device=encoder_output.device
     )
 
     # keeps track of the top beam size hypotheses to expand for each element
@@ -279,11 +278,11 @@ def beam_search(
         [batch_size * size, 1],
         bos_index,
         dtype=torch.long,
-        device=encoder_output[0].device,
+        device=encoder_output.device,
     )
 
     # Give full probability to the first beam on the first step.
-    topk_log_probs = torch.zeros(batch_size, size, device=encoder_output[0].device)
+    topk_log_probs = torch.zeros(batch_size, size, device=encoder_output.device)
     topk_log_probs[:, 1:] = float("-inf")
 
     # Structure that holds finished hypotheses.
