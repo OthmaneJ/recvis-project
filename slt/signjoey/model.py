@@ -4,6 +4,7 @@ import tensorflow as tf
 tf.config.set_visible_devices([], "GPU")
 
 import numpy as np
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 # import sys
@@ -129,8 +130,9 @@ class SignModel(nn.Module):
         elif self.do_recognition and self.fusion == 'late':
             # Gloss Recognition Part
             # N x T x C
-            encoder_output_tensor = torch.cat(encoder_output, dim=1)
-            gloss_scores = self.gloss_output_layer(encoder_output)
+            encoder_output_tensor = torch.cat(encoder_output, dim=2)
+            # print('The size of the merged eocnder output is: {}'.format(encoder_output_tensor.size()))
+            gloss_scores = self.gloss_output_layer(encoder_output_tensor)
             # N x T x C
             gloss_probabilities = gloss_scores.log_softmax(2)
             # Turn it into T x N x C
@@ -290,17 +292,28 @@ class SignModel(nn.Module):
         :return: stacked_output: hypotheses for batch,
             stacked_attention_scores: attention scores for batch
         """
-
-        encoder_output, encoder_hidden = self.encode(
-            sgn=batch.sgn, sgn_mask=batch.sgn_mask, 
-            sgn_face_dope=batch.sgn_face_dope, sgn_body_dope=batch.sgn_body_dope,
-            sgn_length=batch.sgn_lengths
-        )
+        if self.fusion == 'early':
+          encoder_output, encoder_hidden = self.encode(
+              sgn=batch.sgn, sgn_mask=batch.sgn_mask, 
+              sgn_face_dope=batch.sgn_face_dope, sgn_body_dope=batch.sgn_body_dope,
+              sgn_length=batch.sgn_lengths, fusion=self.fusion
+          )
+        elif self.fusion == 'late':
+          encoder_output1, encoder_output2, encoder_output3, encoder_hidden = self.encode(
+              sgn=batch.sgn, sgn_mask=batch.sgn_mask, 
+              sgn_face_dope=batch.sgn_face_dope, sgn_body_dope=batch.sgn_body_dope,
+              sgn_length=batch.sgn_lengths, fusion=self.fusion
+          )
+          encoder_output = [encoder_output1, encoder_output2, encoder_output3]
 
         if self.do_recognition:
             # Gloss Recognition Part
             # N x T x C
-            gloss_scores = self.gloss_output_layer(encoder_output)
+            if self.fusion == 'early':
+              gloss_scores = self.gloss_output_layer(encoder_output)
+            elif self.fusion == 'late':
+              encoder_output_tensor = torch.cat(encoder_output, dim=2)
+              gloss_scores = self.gloss_output_layer(encoder_output_tensor)
             # N x T x C
             gloss_probabilities = gloss_scores.log_softmax(2)
             # Turn it into T x N x C
@@ -345,6 +358,7 @@ class SignModel(nn.Module):
                     eos_index=self.txt_eos_index,
                     decoder=self.decoder,
                     max_output_length=translation_max_output_length,
+                    fusion=self.fusion,
                 )
                 # batch, time, max_sgn_length
             else:  # beam size
@@ -445,7 +459,9 @@ def build_model(
         if cfg["encoder"].get("freeze", False):
             freeze_params(gloss_output_layer)
     if do_recognition and fusion == 'late':
-        gloss_output_layer = nn.Linear(3*encoder.output_size, len(gls_vocab))
+        gloss_output_layer = nn.Sequential(
+          nn.Linear(3*encoder.output_size, encoder.output_size),
+          nn.Linear(encoder.output_size, len(gls_vocab))) 
         if cfg["encoder"].get("freeze", False):
             freeze_params(gloss_output_layer)
     else:

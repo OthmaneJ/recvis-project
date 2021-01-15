@@ -508,7 +508,7 @@ class TransformerDecoder(Decoder):
         )
 
         self.pe = PositionalEncoding(hidden_size)
-        self.layer_norm = nn.LayerNorm(hidden_size, eps=1e-6)
+        self.layer_norm = nn.LayerNorm(3*hidden_size, eps=1e-6)
 
         self.emb_dropout = nn.Dropout(p=emb_dropout)
         self.output_layer = nn.Linear(hidden_size, vocab_size, bias=False)
@@ -563,7 +563,7 @@ class TransformerDecoder(Decoder):
               x2 = layer(x=x, memory=encoder_output[1], src_mask=src_mask, trg_mask=trg_mask)
               x3 = layer(x=x, memory=encoder_output[2], src_mask=src_mask, trg_mask=trg_mask)
           
-          x = torch.cat([x1, x2, x3], dim=1)
+          x = torch.cat([x1, x2, x3], dim=2)
           x = self.layer_norm(x)
 
           output = self.output_layer_late_fusion(x)

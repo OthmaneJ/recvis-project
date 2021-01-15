@@ -21,6 +21,7 @@ def greedy(
     decoder: Decoder,
     encoder_output: Tensor,
     encoder_hidden: Tensor,
+    fusion: str = 'early',
 ) -> (np.array, np.array):
     """
     Greedy decoding. Select the token word highest probability at each time
@@ -54,6 +55,7 @@ def greedy(
         decoder=decoder,
         encoder_output=encoder_output,
         encoder_hidden=encoder_hidden,
+        fusion=fusion,
     )
 
 
@@ -135,6 +137,7 @@ def transformer_greedy(
     decoder: Decoder,
     encoder_output: Tensor,
     encoder_hidden: Tensor,
+    fusion: str = 'early',
 ) -> (np.array, None):
     """
     Special greedy function for transformer, since it works differently.
@@ -156,7 +159,10 @@ def transformer_greedy(
     batch_size = src_mask.size(0)
 
     # start with BOS-symbol for each sentence in the batch
-    ys = encoder_output.new_full([batch_size, 1], bos_index, dtype=torch.long)
+    if fusion == 'early':
+        ys = encoder_output.new_full([batch_size, 1], bos_index, dtype=torch.long)
+    else:
+      ys = encoder_output[0].new_full([batch_size, 1], bos_index, dtype=torch.long)
 
     # a subsequent mask is intersected with this in decoder forward pass
     trg_mask = src_mask.new_ones([1, 1, 1])
@@ -176,6 +182,7 @@ def transformer_greedy(
                 unroll_steps=None,
                 hidden=None,
                 trg_mask=trg_mask,
+                fusion=fusion
             )
 
             logits = logits[:, -1]

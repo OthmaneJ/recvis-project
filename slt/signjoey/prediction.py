@@ -214,6 +214,8 @@ def validate_on_data(
             # GLS Metrics
             gls_wer_score = wer_list(hypotheses=gls_hyp, references=gls_ref)
 
+            print('Gloss ref {}'.format(gls_ref))
+            print('Gloss hyp {}'.format(gls_hyp))
         if do_translation:
             assert len(all_txt_outputs) == len(data)
             if (

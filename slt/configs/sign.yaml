@@ -13,7 +13,9 @@ data:
     dope_test: test.p
     feature_size: 1024
     body_dope_feature_size: 39
+    # body_dope_feature_size: 26
     face_dope_feature_size: 252
+    # face_dope_feature_size: 168
     level: word
     txt_lowercase: true
     max_sent_length: 400
@@ -23,14 +25,14 @@ testing:
     recognition_beam_sizes:
     - 1
     - 2
-    #- 3
-    #- 4
-    #- 5
-    #- 6
-    #- 7
-    #- 8
-    #- 9
-    #- 10
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
     translation_beam_sizes:
     - 1
     #- 2
@@ -55,7 +57,7 @@ training:
     reset_scheduler: false
     reset_optimizer: false
     random_seed: 42
-    model_dir: "/content/drive/MyDrive/slt/sign_sample_model"
+    model_dir: "/content/drive/MyDrive/slt/sign_sample_model_late_fusion"
     recognition_loss_weight: 1.0
     translation_loss_weight: 1.0
     eval_metric: bleu

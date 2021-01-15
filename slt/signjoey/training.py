@@ -9,8 +9,8 @@ import os
 import shutil
 import time
 import queue
-# import sys
-# sys.path.append('//content//drive//MyDrive///MVA//reconaissance objet//projet//recvis-project//slt')
+import sys
+sys.path.append('//content//drive//MyDrive///MVA//reconaissance objet//projet//recvis-project//slt')
 
 from signjoey.model import build_model
 from signjoey.batch import Batch
